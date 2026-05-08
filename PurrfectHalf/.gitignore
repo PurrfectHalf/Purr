@@ -1,0 +1,31 @@
+# Unity tarafından oluşturulan geçici klasörler
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Logs]/
+/[MemoryCaptures]/
+
+# Asset Store paketleri (Yeniden indirilebilir oldukları için yüklenmez)
+/[Aa]ssets/AssetStoreTools*
+
+# Visual Studio ve Rider tarafından oluşturulan dosyalar
+.vs/
+.gradle/
+ExportedObj/
+.idea/
+*.sln
+*.csproj
+*.unityproj
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svclog
+*.com.apple.timemachine.donotbackup
+
+# İşletim sistemi dosyaları
+.DS_Store
+Thumbs.db

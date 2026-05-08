@@ -1,0 +1,1073 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+Built from '6000.3/staging' branch; Version is '6000.3.10f1 (e35f0c77bd8e) revision 14901004'; Using compiler version '194234433'; Build Type 'Release'
+OS: 'Windows 11  (10.0.26200) CoreSingleLanguage' Language: 'tr' Physical Memory: 16108 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
+System  architecture: x64
+Process architecture: x64
+Date: 2026-05-08T19:06:35Z
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-iremb" at "2026-05-08T19:06:35.1901938Z"
+
+COMMAND LINE ARGUMENTS:
+D:\unityhub\Editor\6000.3.10f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker2
+-projectPath
+D:/Purr/PurrfectHalf
+-logFile
+Logs/AssetImportWorker2.log
+-srvPort
+8143
+-job-worker-count
+7
+-background-job-worker-count
+8
+-gc-helper-count
+1
+-name
+AssetImport
+Successfully changed project path to: D:/Purr/PurrfectHalf
+D:/Purr/PurrfectHalf
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-gfx=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+Player connection [24984]  Target information:
+
+Player connection [24984]  * "[IP] 10.139.82.129 [Port] 0 [Flags] 2 [Guid] 2478425265 [EditorId] 2478425265 [Version] 1048832 [Id] WindowsEditor(7,irembusra) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [24984] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [24984] Host joined alternative multi-casting on [225.0.0.222:34997]...
+JobSystem: Creating JobQueue using job-worker-count value 7
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Refreshing native plugins compatible for Editor in 8.83 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.01 ms.
+Initialize engine version: 6000.3.10f1 (e35f0c77bd8e)
+[Subsystems] Discovering subsystems at path D:/unityhub/Editor/6000.3.10f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Purr/PurrfectHalf/Assets
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Intel(R) Iris(R) Xe Graphics (ID=0x46a6)
+    Vendor:   Intel
+    VRAM:     8054 MB
+    Driver:   32.0.101.7082
+Initialize mono
+Mono path[0] = 'D:/unityhub/Editor/6000.3.10f1/Editor/Data/Managed'
+Mono path[1] = 'D:/unityhub/Editor/6000.3.10f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'D:/unityhub/Editor/6000.3.10f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56036
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/unityhub/Editor/6000.3.10f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.006300 seconds.
+- Loaded All Assemblies, in  2.417 seconds
+Native extension for WindowsStandalone target not found
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.741 seconds
+Domain Reload Profiling: 4156ms
+	BeginReloadAssembly (1227ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (3ms)
+	RebuildCommonClasses (189ms)
+	RebuildNativeTypeToScriptingClass (56ms)
+	initialDomainReloadingComplete (215ms)
+	LoadAllAssembliesAndSetupDomain (727ms)
+		LoadAssemblies (1226ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (710ms)
+			TypeCache.Refresh (705ms)
+				TypeCache.ScanAssembly (654ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (2ms)
+	FinalizeReload (1743ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1583ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (140ms)
+			SetLoadedEditorAssemblies (19ms)
+			BeforeProcessingInitializeOnLoad (378ms)
+			ProcessInitializeOnLoadAttributes (714ms)
+			ProcessInitializeOnLoadMethodAttributes (331ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Import Worker Mode flag is 0x00
+Begin MonoManager ReloadAssembly
+[Licensing::Module] Licensing is not yet initialized.
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.17.4+4293ba1
+  Session Id:              ab1af84fe08949f98cde24ad233e2408
+  Correlation Id:          c9fa6f9b0a30131c7d4dbeb16da22748
+  External correlation Id: 3826335874347912716
+  Machine Id:              M/ZnuE2EIDeJVuybJgHQ8AQuyF0=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-iremb" (connect: 0.03s, validation: 0.02s, handshake: 15.90s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-iremb-notifications" at "2026-05-08T19:06:51.1441864Z"
+[Licensing::Module] Licensing Background thread has ended after 15.95s
+[Licensing::Module] Licensing is initialized (took 7.51s).
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: 18968225481491-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+- Loaded All Assemblies, in 11.201 seconds
+Refreshing native plugins compatible for Editor in 7.45 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+Package Manager log level set to [2]
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  5.481 seconds
+Domain Reload Profiling: 16678ms
+	BeginReloadAssembly (8094ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (16ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (69ms)
+	RebuildCommonClasses (120ms)
+	RebuildNativeTypeToScriptingClass (50ms)
+	initialDomainReloadingComplete (116ms)
+	LoadAllAssembliesAndSetupDomain (2816ms)
+		LoadAssemblies (1711ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (1453ms)
+			TypeCache.Refresh (1025ms)
+				TypeCache.ScanAssembly (929ms)
+			BuildScriptInfoCaches (364ms)
+			ResolveRequiredComponents (45ms)
+	FinalizeReload (5482ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (4711ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (12ms)
+			SetLoadedEditorAssemblies (35ms)
+			BeforeProcessingInitializeOnLoad (1375ms)
+			ProcessInitializeOnLoadAttributes (2392ms)
+			ProcessInitializeOnLoadMethodAttributes (889ms)
+			AfterProcessingInitializeOnLoad (8ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (28ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 5.18 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 16 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6913 unused Assets / (4.1 MB). Loaded Objects now: 7731.
+Memory consumption went from 152.8 MB to 148.7 MB.
+Total: 34.999800 ms (FindLiveObjects: 3.818500 ms CreateObjectMapping: 2.885900 ms MarkObjects: 21.571800 ms  DeleteObjects: 6.719500 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 264127.935596 seconds.
+  path: Assets/Settings/Scenes/URP2DSceneTemplate.unity
+  artifactKey: Guid(2cda990e2423bbf4892e6590ba056729) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Settings/Scenes/URP2DSceneTemplate.unity using Guid(2cda990e2423bbf4892e6590ba056729) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'be9ed7fa14e5c7fe91d5c9ed22701a0e') in 0.2274878 seconds
+Number of updated asset objects reloaded before import = 1Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Settings/UniversalRP.asset
+  artifactKey: Guid(681886c5eb7344803b6206f758bf0b1c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Settings/UniversalRP.asset using Guid(681886c5eb7344803b6206f758bf0b1c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'a34d9a7a5816334498a9fb69a2c02bd9') in 0.3625309 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 31.869704 seconds.
+  path: Assets/Solaria_Ext_10b_DEMO/Asset License 01.02.24.txt
+  artifactKey: Guid(7360ea10b27142d4f8f6c0b9bfb4340b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Solaria_Ext_10b_DEMO/Asset License 01.02.24.txt using Guid(7360ea10b27142d4f8f6c0b9bfb4340b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '0cd866f6e0be50c63f714d047df526bd') in 0.0257719 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.050696 seconds.
+  path: Assets/Free pack/Frame indexes.png
+  artifactKey: Guid(441ede0e75dfe1746be9662df86b6153) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Free pack/Frame indexes.png using Guid(441ede0e75dfe1746be9662df86b6153) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b7d41bc78f261cf1deb7972af6530f5b') in 4.2834077 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 824
+
+========================================================================
+Received Import Request.
+  Time since last request: 17.254235 seconds.
+  path: Assets/__MACOSX/CatMegaFree/CatUIFree
+  artifactKey: Guid(186c4546b85f0f0439f53304d7a784a2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/__MACOSX/CatMegaFree/CatUIFree using Guid(186c4546b85f0f0439f53304d7a784a2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'e67d7f6aa02ee572b5ceec3801213c31') in 0.0278788 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/__MACOSX/CatMegaFree
+  artifactKey: Guid(24ebeb0923b8a01459344a7f659bcc3e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/__MACOSX/CatMegaFree using Guid(24ebeb0923b8a01459344a7f659bcc3e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '9c98fa3b523a9c97504983e0dc5bc84f') in 0.0245336 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.660194 seconds.
+  path: Assets/CatMegaFree/MochiFree
+  artifactKey: Guid(7c6b61b5b1662ba478948ff84e215389) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/CatMegaFree/MochiFree using Guid(7c6b61b5b1662ba478948ff84e215389) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '3c78931bbca37d0129fd6a76fa9915fe') in 0.0216483 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/CatMegaFree/CatRoomFree/Furnitures.png
+  artifactKey: Guid(91b6c4be6f5892c4eb67698f7f38eb82) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/CatMegaFree/CatRoomFree/Furnitures.png using Guid(91b6c4be6f5892c4eb67698f7f38eb82) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '7ddbc0ed963935bdca7f92d06f8acf01') in 0.2602633 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 42
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.920972 seconds.
+  path: Assets/interior free/interior free.png
+  artifactKey: Guid(18446e5094e97004584913d3aa423bc5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/interior free/interior free.png using Guid(18446e5094e97004584913d3aa423bc5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '147216f9bcf6c30948cbee07de75890a') in 0.0986628 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 20
+
+========================================================================
+Received Import Request.
+  Time since last request: 221.621321 seconds.
+  path: Assets/__MACOSX
+  artifactKey: Guid(c7385059d6cfa1249bb389e04df65b13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/__MACOSX using Guid(c7385059d6cfa1249bb389e04df65b13) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6297b1f88eb4b9ca0b58cbe426da86db') in 0.0012858 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.735059 seconds.
+  path: Assets/__MACOSX/CatMegaFree
+  artifactKey: Guid(24ebeb0923b8a01459344a7f659bcc3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/__MACOSX/CatMegaFree using Guid(24ebeb0923b8a01459344a7f659bcc3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ec578c866e69a3ed831125a1d19d6cdb') in 0.0008292 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.133317 seconds.
+  path: Assets/__MACOSX/CatMegaFree/CatRoomFree
+  artifactKey: Guid(6fab01c54b5e931409f7634434c984af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/__MACOSX/CatMegaFree/CatRoomFree using Guid(6fab01c54b5e931409f7634434c984af) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a85ecd79093d851addfbf3b74ba79a72') in 0.0009332 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.437259 seconds.
+  path: Assets/CatMegaFree
+  artifactKey: Guid(ef1b0a628002b844f8acfb71b99ed6d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CatMegaFree using Guid(ef1b0a628002b844f8acfb71b99ed6d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9fed2d95f16b08285b012cea27d5de65') in 0.0008071 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.467962 seconds.
+  path: Assets/CatMegaFree/CatRoomFree
+  artifactKey: Guid(8d803f8ecdcc9be46a994818700b4cf0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CatMegaFree/CatRoomFree using Guid(8d803f8ecdcc9be46a994818700b4cf0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '71471420a0fa78a18e60b815b703bf3b') in 0.0007505 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.877965 seconds.
+  path: Assets/CatMegaFree/CatRoomFree/Furnitures.png
+  artifactKey: Guid(91b6c4be6f5892c4eb67698f7f38eb82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CatMegaFree/CatRoomFree/Furnitures.png using Guid(91b6c4be6f5892c4eb67698f7f38eb82) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b1a668a336f5cf138e8ae4efdbd10387') in 0.3197796 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 42
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.826038 seconds.
+  path: Assets/CatMegaFree/CatUIFree
+  artifactKey: Guid(4eeb7d488d1441d4490876fed307c613) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CatMegaFree/CatUIFree using Guid(4eeb7d488d1441d4490876fed307c613) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a5af468ff8ecb7c473d643e530eed15c') in 0.0008735 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.060724 seconds.
+  path: Assets/CatMegaFree/CatUIFree/free.png
+  artifactKey: Guid(c4d9233371ffb844ead75f676b4d0714) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CatMegaFree/CatUIFree/free.png using Guid(c4d9233371ffb844ead75f676b4d0714) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3bdbca5c2ec3adc4abc083c35f3529a6') in 0.3325101 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 81
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.309082 seconds.
+  path: Assets/CatMegaFree/MochiFree
+  artifactKey: Guid(7c6b61b5b1662ba478948ff84e215389) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CatMegaFree/MochiFree using Guid(7c6b61b5b1662ba478948ff84e215389) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd6bf831f78bfd4c3141f2247143f85e3') in 0.0008763 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.041531 seconds.
+  path: Assets/CatMegaFree/MochiFree/Box3.png
+  artifactKey: Guid(f51e45adf66b3aa42ab1e7171bf961d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CatMegaFree/MochiFree/Box3.png using Guid(f51e45adf66b3aa42ab1e7171bf961d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c2c869deaa15b89154a1c1bc5fdf8413') in 0.045743 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.884735 seconds.
+  path: Assets/CatMegaFree/PochiFree
+  artifactKey: Guid(79887803ec0346b4d9edf1e62ee001cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CatMegaFree/PochiFree using Guid(79887803ec0346b4d9edf1e62ee001cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6ac0cca595e92d8df75104ecc547dfab') in 0.0010045 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.020647 seconds.
+  path: Assets/CatMegaFree/PochiFree/FreeSprites.png
+  artifactKey: Guid(d4ab7853c7c732d43ad3b8de922eaf75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CatMegaFree/PochiFree/FreeSprites.png using Guid(d4ab7853c7c732d43ad3b8de922eaf75) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '43516d75d07b3c7599f548dc03a6eab5') in 0.1953156 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 36
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.614275 seconds.
+  path: Assets/Free pack
+  artifactKey: Guid(b211bcdaa62f9174ea67b17d171d06b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free pack using Guid(b211bcdaa62f9174ea67b17d171d06b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1ec78ceb407adfff953bbd14cce152b2') in 0.0011682 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.042742 seconds.
+  path: Assets/Free pack/cat 1.png
+  artifactKey: Guid(4e696c70b5ce9834c9b40662a6544f2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free pack/cat 1.png using Guid(4e696c70b5ce9834c9b40662a6544f2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '52da9289c0ea8bef95984b821b47c14d') in 2.1518056 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 313
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000099 seconds.
+  path: Assets/Free pack/cat 16x16 with text.png
+  artifactKey: Guid(72568ddbb3216f743b59c842ea8887ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free pack/cat 16x16 with text.png using Guid(72568ddbb3216f743b59c842ea8887ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7e7e75abe6b930dcc0d56b7a81b00425') in 1.8662532 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 239
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000251 seconds.
+  path: Assets/Free pack/cat 1.9.png
+  artifactKey: Guid(2b0de37bb4692fe439d5d130b96997d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free pack/cat 1.9.png using Guid(2b0de37bb4692fe439d5d130b96997d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c05583b0b9fc45bdedda10be2afa48ba') in 2.1102272 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 313
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000081 seconds.
+  path: Assets/Free pack/cat 1.9 16x16 animation.aseprite
+  artifactKey: Guid(3ca295dac28454f48bf7b5b5d7b3ce59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free pack/cat 1.9 16x16 animation.aseprite using Guid(3ca295dac28454f48bf7b5b5d7b3ce59) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1794aeb3d0e4b143b236487bb0cf58fb') in 3.5375482 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 7
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000093 seconds.
+  path: Assets/Free pack/cat 16x16 with text.aseprite
+  artifactKey: Guid(18e30b12b2481604983bfaf75c3bdc44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free pack/cat 16x16 with text.aseprite using Guid(18e30b12b2481604983bfaf75c3bdc44) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a25e7e9c768a02c831195ab906ff1e7b') in 0.0856309 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 7
+
+========================================================================
+Received Import Request.
+  Time since last request: 39.576347 seconds.
+  path: Assets/interior free
+  artifactKey: Guid(cc3bd7feebdf604438776c927e8c55ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/interior free using Guid(cc3bd7feebdf604438776c927e8c55ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c2b633d08e33c6e863fe4050fd2e45ca') in 0.0017369 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.031445 seconds.
+  path: Assets/interior free/interior free.png
+  artifactKey: Guid(18446e5094e97004584913d3aa423bc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/interior free/interior free.png using Guid(18446e5094e97004584913d3aa423bc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9cbd08693bf3d5b069f4b0ed5e963a58') in 0.1991341 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 20
+
+========================================================================
+Received Import Request.
+  Time since last request: 29.633245 seconds.
+  path: Assets/Solaria_Ext_10b_DEMO/Solaria_Palette_04.png
+  artifactKey: Guid(429f5c48c283add48ab644fc6bc08b0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Solaria_Ext_10b_DEMO/Solaria_Palette_04.png using Guid(429f5c48c283add48ab644fc6bc08b0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4bd6ecd87ae728ceb953f92125acdda7') in 0.0427579 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 1089.393732 seconds.
+  path: Assets/Settings/Renderer2D.asset
+  artifactKey: Guid(424799608f7334c24bf367e4bbfa7f9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/Renderer2D.asset using Guid(424799608f7334c24bf367e4bbfa7f9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '403a0a9c0aeae1e5730532c1b4a28511') in 0.0025466 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000080 seconds.
+  path: Assets/Settings/UniversalRP.asset
+  artifactKey: Guid(681886c5eb7344803b6206f758bf0b1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/UniversalRP.asset using Guid(681886c5eb7344803b6206f758bf0b1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'bf385e22c4eb99ed4b0458ac61d8fec4') in 0.0015877 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 438.394336 seconds.
+  path: Assets/Modern tiles_Free/Characters_free/Amelia_sit2_16x16.png
+  artifactKey: Guid(5d9472805395caa40a841f69280e9553) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Modern tiles_Free/Characters_free/Amelia_sit2_16x16.png using Guid(5d9472805395caa40a841f69280e9553) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '5fb774920b7d0fa1d397886e794c7179') in 0.0898597 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 14
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000085 seconds.
+  path: Assets/Modern tiles_Free/Characters_free/Bob_sit3_16x16.png
+  artifactKey: Guid(ba93daab4a424e24eb2ef8b4ff79b520) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Modern tiles_Free/Characters_free/Bob_sit3_16x16.png using Guid(ba93daab4a424e24eb2ef8b4ff79b520) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'dd4f49b41bd557811e4cdfd5ebdbcb1e') in 0.0562377 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 13
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000052 seconds.
+  path: Assets/Modern tiles_Free/Interiors_free/32x32
+  artifactKey: Guid(c7f6528b256ff1a48b60b12382f0cf4e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Modern tiles_Free/Interiors_free/32x32 using Guid(c7f6528b256ff1a48b60b12382f0cf4e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'a104699ffc63aa8cd1e261a477622102') in 0.0198215 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Modern tiles_Free/Old/Tileset_16x16_16.png
+  artifactKey: Guid(be8ddd08304b7034e91f2516f532b5ef) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Modern tiles_Free/Old/Tileset_16x16_16.png using Guid(be8ddd08304b7034e91f2516f532b5ef) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'f65b148bef75296c14fc626b291a7b03') in 0.03353 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Modern tiles_Free/Characters_free/Adam_idle_anim_16x16.png
+  artifactKey: Guid(80d86f1b0869f4f4fa9cfdee62564108) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Modern tiles_Free/Characters_free/Adam_idle_anim_16x16.png using Guid(80d86f1b0869f4f4fa9cfdee62564108) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '722b40222817700e24ac50749b472fc7') in 0.0490122 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000056 seconds.
+  path: Assets/Modern tiles_Free/Old/idle_48x48_2.png
+  artifactKey: Guid(621572bceec2c1c4e96586261f2a59a5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Modern tiles_Free/Old/idle_48x48_2.png using Guid(621572bceec2c1c4e96586261f2a59a5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '25abb79cccb3718506cb4feb1b9b5192') in 0.0493811 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000068 seconds.
+  path: Assets/Modern tiles_Free/Old/Tileset_32x32_1.png
+  artifactKey: Guid(8d412202ea8aff14bb3d6c6c08bd86b8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Modern tiles_Free/Old/Tileset_32x32_1.png using Guid(8d412202ea8aff14bb3d6c6c08bd86b8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '684bc923586005fa56cc8df9868ca32b') in 0.0378758 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Modern tiles_Free/Interiors_free/16x16
+  artifactKey: Guid(af8867a1b294f5142a6c2634745fdb5b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Modern tiles_Free/Interiors_free/16x16 using Guid(af8867a1b294f5142a6c2634745fdb5b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '4d0becd12e6e8559f82c483949d0346d') in 0.0226106 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Modern tiles_Free/Old/Tileset_16x16_2.png
+  artifactKey: Guid(68e074b4f86266d4183f81701a562f2f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Modern tiles_Free/Old/Tileset_16x16_2.png using Guid(68e074b4f86266d4183f81701a562f2f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '2512a8492e0f8c22e7cb1fb4c44f8806') in 0.0307497 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000047 seconds.
+  path: Assets/Modern tiles_Free/Characters_free/Alex_16x16.png
+  artifactKey: Guid(d2d03c2834f97054a9c69144cd430e0c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Modern tiles_Free/Characters_free/Alex_16x16.png using Guid(d2d03c2834f97054a9c69144cd430e0c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'd2b40550f3bf9c0b42e53192741953cb') in 0.222432 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 87
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000050 seconds.
+  path: Assets/Modern tiles_Free/Characters_free/Bob_phone_16x16.png
+  artifactKey: Guid(9115174eef5454d4c8f8ccb7fda352d0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Modern tiles_Free/Characters_free/Bob_phone_16x16.png using Guid(9115174eef5454d4c8f8ccb7fda352d0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '1e7dbb16dd6e446da6c166a56aafd69f') in 0.0507222 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000069 seconds.
+  path: Assets/Modern tiles_Free/Characters_free/RPGMAKERMV
+  artifactKey: Guid(3c3a7428e107f0145b6abb1ead21978d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Modern tiles_Free/Characters_free/RPGMAKERMV using Guid(3c3a7428e107f0145b6abb1ead21978d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '2ea40674c90800ccc144842cac880627') in 0.0217012 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Modern tiles_Free/Characters_free/Amelia_sit3_16x16.png
+  artifactKey: Guid(163f9c0429ca0dc40bf07584768089fb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Modern tiles_Free/Characters_free/Amelia_sit3_16x16.png using Guid(163f9c0429ca0dc40bf07584768089fb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '9bdaec2fdf9bb393c20e2e40bd6eb790') in 0.0839868 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 13
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/Modern tiles_Free/Old/Tileset_32x32_3.png
+  artifactKey: Guid(06ed76a8ed3659947b7b9873c2e01923) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Modern tiles_Free/Old/Tileset_32x32_3.png using Guid(06ed76a8ed3659947b7b9873c2e01923) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '0d63a47213aa8871b76e928062f40fc5') in 0.0333075 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Modern tiles_Free/Characters_free/Adam_run_16x16.png
+  artifactKey: Guid(e8e14adddfc07014eb58ccc9e191d636) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Modern tiles_Free/Characters_free/Adam_run_16x16.png using Guid(e8e14adddfc07014eb58ccc9e191d636) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'ee353ef15c657efd8d0abc0cdbf55ad9') in 0.0388473 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 7
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000055 seconds.
+  path: Assets/Modern tiles_Free/Interiors_free/48x48/Room_Builder_free_48x48.png
+  artifactKey: Guid(f0577f3253ba343478c1af6c2f0c6e69) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Modern tiles_Free/Interiors_free/48x48/Room_Builder_free_48x48.png using Guid(f0577f3253ba343478c1af6c2f0c6e69) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '1d43440a86566b0a0a5c52b0ac215998') in 0.055901 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 13
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Modern tiles_Free/Characters_free/Alex_phone_16x16.png
+  artifactKey: Guid(5ad4d51328960974ab07ab282874caa4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Modern tiles_Free/Characters_free/Alex_phone_16x16.png using Guid(5ad4d51328960974ab07ab282874caa4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '20634e05ed15ea4f21c1f75b5a2da77a') in 0.0575505 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Modern tiles_Free/Characters_free/Adam_idle_16x16.png
+  artifactKey: Guid(509f96d92b716f748ae99b16cccb5618) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Modern tiles_Free/Characters_free/Adam_idle_16x16.png using Guid(509f96d92b716f748ae99b16cccb5618) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '70d5bc88ec5db1f9da5b4113c675487a') in 0.0298872 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Modern tiles_Free/Characters_free/Bob_idle_anim_16x16.png
+  artifactKey: Guid(1b91a15c1197fce4eb67b292b7d85fdc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Modern tiles_Free/Characters_free/Bob_idle_anim_16x16.png using Guid(1b91a15c1197fce4eb67b292b7d85fdc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '51cdf97a7e982d9f39c0cd42d423f190') in 0.0623055 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 16
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000056 seconds.
+  path: Assets/Modern tiles_Free/Characters_free/Alex_sit3_16x16.png
+  artifactKey: Guid(836abfa5ae7bc4845ae0ec0e5e643380) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Modern tiles_Free/Characters_free/Alex_sit3_16x16.png using Guid(836abfa5ae7bc4845ae0ec0e5e643380) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'fee8b212fbcd8b678a548f757696de8d') in 0.0475508 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 13
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Modern tiles_Free/Characters_free/Alex_idle_anim_16x16.png
+  artifactKey: Guid(809e4830a646d8e40a5ad0401229df95) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Modern tiles_Free/Characters_free/Alex_idle_anim_16x16.png using Guid(809e4830a646d8e40a5ad0401229df95) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '964b03c2d54118b93ced0120334b51f0') in 0.0819198 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 16
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Modern tiles_Free/Characters_free/Bob_idle_16x16.png
+  artifactKey: Guid(daa0080e9c444aa4f9933cd8c2ba8e8c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Modern tiles_Free/Characters_free/Bob_idle_16x16.png using Guid(daa0080e9c444aa4f9933cd8c2ba8e8c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'ab804a0cbb2e64504d545d7f3b810260') in 0.0434434 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Modern tiles_Free/Old/Tileset_32x32_2.png
+  artifactKey: Guid(643ab05a6f5fbd649a59a1a40cb8e466) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Modern tiles_Free/Old/Tileset_32x32_2.png using Guid(643ab05a6f5fbd649a59a1a40cb8e466) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '51f630d7f2e30c5a004d7ebee20df81f') in 0.0332634 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000053 seconds.
+  path: Assets/Modern tiles_Free/LICENSE.txt
+  artifactKey: Guid(e57ef3473db48f0469cc9a2821a29200) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Modern tiles_Free/LICENSE.txt using Guid(e57ef3473db48f0469cc9a2821a29200) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '6118b0eee357ad3855abf2f39ce24b04') in 0.0191959 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Modern tiles_Free/Old/Tileset_16x16_9.png
+  artifactKey: Guid(727cffd6336d6eb4d85dc65f5667cb49) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Modern tiles_Free/Old/Tileset_16x16_9.png using Guid(727cffd6336d6eb4d85dc65f5667cb49) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '5926262132734372358d825b416aa221') in 0.0267393 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Modern tiles_Free/Old/run_horizontal_32x32_2.png
+  artifactKey: Guid(d1e443a2eaa745c4fa108b5a54f7eafe) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Modern tiles_Free/Old/run_horizontal_32x32_2.png using Guid(d1e443a2eaa745c4fa108b5a54f7eafe) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '4da47e9a8632520cb434d0a119a09d30') in 0.0742079 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 25
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Modern tiles_Free/Characters_free/Alex_idle_16x16.png
+  artifactKey: Guid(3afda2b217469814d9bf34ef6423f8db) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Modern tiles_Free/Characters_free/Alex_idle_16x16.png using Guid(3afda2b217469814d9bf34ef6423f8db) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '33764fa573fe799d1e202eead47dc9fa') in 0.0419977 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/Modern tiles_Free/Characters_free/Amelia_sit_16x16.png
+  artifactKey: Guid(1db4f449b7799ed4e97343359dc5bbc7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Modern tiles_Free/Characters_free/Amelia_sit_16x16.png using Guid(1db4f449b7799ed4e97343359dc5bbc7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '2f7d4cebcd77b7fdfb7c9d3a724ba28c') in 0.0635624 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 14
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Modern tiles_Free/Old/run_horizontal_48x48_2.png
+  artifactKey: Guid(41e05b35f05b457499dcd8a3e83547cf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Modern tiles_Free/Old/run_horizontal_48x48_2.png using Guid(41e05b35f05b457499dcd8a3e83547cf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '756dd1bb5a2a3334f9489e4dfc5bdc29') in 0.0928991 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 25
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/Modern tiles_Free/Old/mv/Character_2_16x16_RPGMAKER.png
+  artifactKey: Guid(4c37bee1dbe65794a97ec20f4b9b9bcc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Modern tiles_Free/Old/mv/Character_2_16x16_RPGMAKER.png using Guid(4c37bee1dbe65794a97ec20f4b9b9bcc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '5a92d56474f567d962a7a62044d4a6f2') in 0.063237 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 14
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000054 seconds.
+  path: Assets/Modern tiles_Free
+  artifactKey: Guid(653d336428a12814ba0eed4d30d03c29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modern tiles_Free using Guid(653d336428a12814ba0eed4d30d03c29) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a2df15b4a902c590c2eb118b9d513256') in 0.0008029 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Modern tiles_Free/Characters_free/Adam_sit2_16x16.png
+  artifactKey: Guid(116da0d0b5d47e64e91b97b9dde288b0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Modern tiles_Free/Characters_free/Adam_sit2_16x16.png using Guid(116da0d0b5d47e64e91b97b9dde288b0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '89c54396c2ad1520eea4a5b6bf5a49f1') in 0.069982 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 14
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Modern tiles_Free/Old/mv/Character_2_48x48_RPGMAKER.png
+  artifactKey: Guid(4b862be8f5c14bf4c8bd1b336da711d4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Modern tiles_Free/Old/mv/Character_2_48x48_RPGMAKER.png using Guid(4b862be8f5c14bf4c8bd1b336da711d4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '9be8569f76cde31f90a6afb123eab35b') in 0.0808026 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 14
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Modern tiles_Free/Old/Tileset_48x48_16.png
+  artifactKey: Guid(9f80f4f5d05842b4695186ddf460af40) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Modern tiles_Free/Old/Tileset_48x48_16.png using Guid(9f80f4f5d05842b4695186ddf460af40) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '7fee46a8e92998a51aa2e3c3d7b9ecc8') in 0.0386579 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/Modern tiles_Free/Interiors_free/32x32/Room_Builder_free_32x32.png
+  artifactKey: Guid(579731cd0e6583242b837cbb1fe17df3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Modern tiles_Free/Interiors_free/32x32/Room_Builder_free_32x32.png using Guid(579731cd0e6583242b837cbb1fe17df3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '791d30e438582432b10313af49d9c6bb') in 0.0591845 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 13
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Modern tiles_Free/Interiors_free/16x16/Room_Builder_free_16x16.png
+  artifactKey: Guid(fb50b7069b71be64da0b5076b79512d8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Modern tiles_Free/Interiors_free/16x16/Room_Builder_free_16x16.png using Guid(fb50b7069b71be64da0b5076b79512d8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '7065e22ec93745a0a14575d4a3c5b58c') in 0.0690272 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 13
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Modern tiles_Free/Characters_free/Adam_phone_16x16.png
+  artifactKey: Guid(856936a2397889345b04fdf69aa8e079) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Modern tiles_Free/Characters_free/Adam_phone_16x16.png using Guid(856936a2397889345b04fdf69aa8e079) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '4e07ef169df5544c7dccdc0265b9840b') in 0.0377232 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000052 seconds.
+  path: Assets/Modern tiles_Free/Old/Tileset_48x48_2.png
+  artifactKey: Guid(75565ff0429fdce448e2bcb39ec20689) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Modern tiles_Free/Old/Tileset_48x48_2.png using Guid(75565ff0429fdce448e2bcb39ec20689) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '27820ed9307972025f17e2542958e602') in 0.0379416 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000053 seconds.
+  path: Assets/Modern tiles_Free/Old/Tileset_48x48_9.png
+  artifactKey: Guid(abcd189d64af2794ca84b75ec2a02117) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Modern tiles_Free/Old/Tileset_48x48_9.png using Guid(abcd189d64af2794ca84b75ec2a02117) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '974e5e9e9d786c0780d1a44705a630e4') in 0.0333626 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000058 seconds.
+  path: Assets/Modern tiles_Free/Old/idle_16x16_2.png
+  artifactKey: Guid(559a36096bc07af4392f1ef6e260691f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Modern tiles_Free/Old/idle_16x16_2.png using Guid(559a36096bc07af4392f1ef6e260691f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '6e6eb1190f04a62306f71d653f6bbe66') in 0.040419 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Modern tiles_Free/Characters_free/RPGMAKERMV/Characters_MV.png
+  artifactKey: Guid(31191adbc28269340816f72e4b97624a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Modern tiles_Free/Characters_free/RPGMAKERMV/Characters_MV.png using Guid(31191adbc28269340816f72e4b97624a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '7a8bc9be8489004fca5640981e94db04') in 0.1255129 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 32
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000047 seconds.
+  path: Assets/Modern tiles_Free/Old/mv/Character_2_32x32_RPGMAKER.png
+  artifactKey: Guid(ad0cb546b0f229d439f7bf2417604825) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Modern tiles_Free/Old/mv/Character_2_32x32_RPGMAKER.png using Guid(ad0cb546b0f229d439f7bf2417604825) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '7f63c0d95aabc114b36ce551bdefd33d') in 0.0598999 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 14
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000060 seconds.
+  path: Assets/Modern tiles_Free/Characters_free
+  artifactKey: Guid(61ca5e83313fb204a96d3ebd657cdd54) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Modern tiles_Free/Characters_free using Guid(61ca5e83313fb204a96d3ebd657cdd54) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '61a5805cb6547d0cf01469b1c793ed60') in 0.0264492 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Modern tiles_Free/Characters_free/Amelia_idle_anim_16x16.png
+  artifactKey: Guid(d87207e5ce378b441ac2f9a3f839ac8c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Modern tiles_Free/Characters_free/Amelia_idle_anim_16x16.png using Guid(d87207e5ce378b441ac2f9a3f839ac8c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b2b843c5145af228bb264cc50ae648ff') in 0.0617118 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 16
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Modern tiles_Free/Old/Tileset_48x48_1.png
+  artifactKey: Guid(1d4dd9028cb5de84cbdffaeae20a817d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Modern tiles_Free/Old/Tileset_48x48_1.png using Guid(1d4dd9028cb5de84cbdffaeae20a817d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'df7ad5b654c4c3e0eb863e385e7364a5') in 0.0297632 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Modern tiles_Free/Characters_free/Amelia_run_16x16.png
+  artifactKey: Guid(fb5dc85fc09926b47b0ce3cb597b0683) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Modern tiles_Free/Characters_free/Amelia_run_16x16.png using Guid(fb5dc85fc09926b47b0ce3cb597b0683) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'e5c494cfff0461f218979253027e42b0') in 0.0804075 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 16
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Modern tiles_Free/Old/Tileset_32x32_16.png
+  artifactKey: Guid(d0011b3e3fd68054aa0a9a93787bb83b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Modern tiles_Free/Old/Tileset_32x32_16.png using Guid(d0011b3e3fd68054aa0a9a93787bb83b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '2e57dc518d86ca3df0e87d5ccd996bb7') in 0.0325724 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Modern tiles_Free/Characters_free/Adam_16x16.png
+  artifactKey: Guid(449467ddc3ed5694f885e10db4c4c8e0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Modern tiles_Free/Characters_free/Adam_16x16.png using Guid(449467ddc3ed5694f885e10db4c4c8e0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'adb58b87bc9966d19373e239011c78e6') in 0.1119507 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 39
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Modern tiles_Free/Characters_free/Bob_run_16x16.png
+  artifactKey: Guid(18387d881f066684eac430eebe693425) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Modern tiles_Free/Characters_free/Bob_run_16x16.png using Guid(18387d881f066684eac430eebe693425) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'eda193f7a79705caa0a0de1100703083') in 0.0913271 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 25
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000049 seconds.
+  path: Assets/Modern tiles_Free/Interiors_free/16x16/Interiors_free_16x16.png
+  artifactKey: Guid(0d3db2fc51e1ea04ab249b57dbb4f96d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Modern tiles_Free/Interiors_free/16x16/Interiors_free_16x16.png using Guid(0d3db2fc51e1ea04ab249b57dbb4f96d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'da08e55c69179faf180c4358d6a45f63') in 0.6569573 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 262
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.571704 seconds.
+  path: Assets/Modern tiles_Free/Interiors_free/32x32/Room_Builder_free_32x32.png
+  artifactKey: Guid(579731cd0e6583242b837cbb1fe17df3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modern tiles_Free/Interiors_free/32x32/Room_Builder_free_32x32.png using Guid(579731cd0e6583242b837cbb1fe17df3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f1b73d40312e1d18c6eeb4cbef2fde59') in 0.0786577 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 13
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.599632 seconds.
+  path: Assets/Modern tiles_Free/Interiors_free/16x16/Room_Builder_free_16x16.png
+  artifactKey: Guid(fb50b7069b71be64da0b5076b79512d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modern tiles_Free/Interiors_free/16x16/Room_Builder_free_16x16.png using Guid(fb50b7069b71be64da0b5076b79512d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '724b27667eac310cee6ddd3b55aebc9d') in 0.0695977 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 13
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.954065 seconds.
+  path: Assets/Modern tiles_Free/Characters_free/Adam_idle_16x16.png
+  artifactKey: Guid(509f96d92b716f748ae99b16cccb5618) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modern tiles_Free/Characters_free/Adam_idle_16x16.png using Guid(509f96d92b716f748ae99b16cccb5618) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '33816267f3f8591bc58f4105f3185861') in 0.0280075 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000061 seconds.
+  path: Assets/Modern tiles_Free/Characters_free/Adam_sit_16x16.png
+  artifactKey: Guid(afb7f17a8a38e20499b62b57da0fd863) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modern tiles_Free/Characters_free/Adam_sit_16x16.png using Guid(afb7f17a8a38e20499b62b57da0fd863) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd00bbfe85e244591fe7c1980f1daeefc') in 0.0601697 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 14
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Modern tiles_Free/Characters_free/Alex_idle_16x16.png
+  artifactKey: Guid(3afda2b217469814d9bf34ef6423f8db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modern tiles_Free/Characters_free/Alex_idle_16x16.png using Guid(3afda2b217469814d9bf34ef6423f8db) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd6047c7adddf30b3a7849b2061755641') in 0.0370294 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Modern tiles_Free/Characters_free/Adam_phone_16x16.png
+  artifactKey: Guid(856936a2397889345b04fdf69aa8e079) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modern tiles_Free/Characters_free/Adam_phone_16x16.png using Guid(856936a2397889345b04fdf69aa8e079) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2856a3977ac5d764fea8f93a5402f4d4') in 0.0265669 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000053 seconds.
+  path: Assets/Modern tiles_Free/Characters_free/Alex_phone_16x16.png
+  artifactKey: Guid(5ad4d51328960974ab07ab282874caa4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modern tiles_Free/Characters_free/Alex_phone_16x16.png using Guid(5ad4d51328960974ab07ab282874caa4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2270919b2d08cf1df53b662284d18601') in 0.057675 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Modern tiles_Free/Characters_free/Adam_run_16x16.png
+  artifactKey: Guid(e8e14adddfc07014eb58ccc9e191d636) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modern tiles_Free/Characters_free/Adam_run_16x16.png using Guid(e8e14adddfc07014eb58ccc9e191d636) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7cb1d7a5b520d3119f8abaf542fb9d01') in 0.0506247 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 7
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Modern tiles_Free/Characters_free/Adam_sit3_16x16.png
+  artifactKey: Guid(54556f81e8d844a4099797e2452f7274) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modern tiles_Free/Characters_free/Adam_sit3_16x16.png using Guid(54556f81e8d844a4099797e2452f7274) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a5aa2c86e60ce9d571d26ef45a1442d8') in 0.0341602 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.668346 seconds.
+  path: Assets/Modern tiles_Free/Characters_free/Alex_sit2_16x16.png
+  artifactKey: Guid(b6869a5eaf81bfd41bb656df1e59499e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modern tiles_Free/Characters_free/Alex_sit2_16x16.png using Guid(b6869a5eaf81bfd41bb656df1e59499e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b85e72c368319dafebb0dada4c3fc041') in 0.0598202 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 14
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Modern tiles_Free/Characters_free/Alex_sit3_16x16.png
+  artifactKey: Guid(836abfa5ae7bc4845ae0ec0e5e643380) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modern tiles_Free/Characters_free/Alex_sit3_16x16.png using Guid(836abfa5ae7bc4845ae0ec0e5e643380) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ea93cb5ffc0830c38985fabfd8a10c54') in 0.0652433 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 13
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Modern tiles_Free/Characters_free/Amelia_16x16.png
+  artifactKey: Guid(a5baf125cd29599419a531c78647fbd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modern tiles_Free/Characters_free/Amelia_16x16.png using Guid(a5baf125cd29599419a531c78647fbd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd33fb69578b81dffdf6b65f4145a7ff7') in 0.2539915 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 70
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000075 seconds.
+  path: Assets/Modern tiles_Free/Characters_free/Amelia_sit2_16x16.png
+  artifactKey: Guid(5d9472805395caa40a841f69280e9553) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modern tiles_Free/Characters_free/Amelia_sit2_16x16.png using Guid(5d9472805395caa40a841f69280e9553) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c6d2cd1378f4789f1d9967d865245e6d') in 0.0584827 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 14
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Modern tiles_Free/Characters_free/Amelia_sit_16x16.png
+  artifactKey: Guid(1db4f449b7799ed4e97343359dc5bbc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modern tiles_Free/Characters_free/Amelia_sit_16x16.png using Guid(1db4f449b7799ed4e97343359dc5bbc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '38435607d54772b1c4e7acdf6208a300') in 0.059413 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 14
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.887160 seconds.
+  path: Assets/Modern tiles_Free/Old/idle_32x32_2.png
+  artifactKey: Guid(6532f54b49d1a554b8a0a41322f732d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modern tiles_Free/Old/idle_32x32_2.png using Guid(6532f54b49d1a554b8a0a41322f732d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e73e825ed6720aaaf60b5e8ee2fa3697') in 0.0396092 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Modern tiles_Free/Old/run_horizontal_16x16_2.png
+  artifactKey: Guid(86e0bf1a3b304e54fb71c302a4fac401) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modern tiles_Free/Old/run_horizontal_16x16_2.png using Guid(86e0bf1a3b304e54fb71c302a4fac401) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9acdf673032ca7ad917551c19703a7c6') in 0.1068092 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 25
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000072 seconds.
+  path: Assets/Modern tiles_Free/Old/idle_48x48_2.png
+  artifactKey: Guid(621572bceec2c1c4e96586261f2a59a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modern tiles_Free/Old/idle_48x48_2.png using Guid(621572bceec2c1c4e96586261f2a59a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9c4969a7e1f4f1c4a50d5ed4f6f3176b') in 0.0412753 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000054 seconds.
+  path: Assets/Modern tiles_Free/Old/Tileset_16x16_1.png
+  artifactKey: Guid(5aa8240eb822c7b4b9e21cacb58bb71f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modern tiles_Free/Old/Tileset_16x16_1.png using Guid(5aa8240eb822c7b4b9e21cacb58bb71f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9c414f2d32e220bd074796c59d795b87') in 0.0338623 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/Modern tiles_Free/Old/Tileset_16x16_9.png
+  artifactKey: Guid(727cffd6336d6eb4d85dc65f5667cb49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modern tiles_Free/Old/Tileset_16x16_9.png using Guid(727cffd6336d6eb4d85dc65f5667cb49) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4077fa7db94d399633eb63639decfdc7') in 0.0370451 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Modern tiles_Free/Old/Tileset_16x16_3.png
+  artifactKey: Guid(ae4e212dc5afaf1479f8558bd9a1e3dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modern tiles_Free/Old/Tileset_16x16_3.png using Guid(ae4e212dc5afaf1479f8558bd9a1e3dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9339947963d09f8e8b5b0a91a4e304e7') in 0.0309082 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.240389 seconds.
+  path: Assets/Modern tiles_Free/Old/Tileset_32x32_3.png
+  artifactKey: Guid(06ed76a8ed3659947b7b9873c2e01923) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modern tiles_Free/Old/Tileset_32x32_3.png using Guid(06ed76a8ed3659947b7b9873c2e01923) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '74e618f4550c6e9556b1185529ad064c') in 0.0298767 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Modern tiles_Free/Old/Tileset_48x48_3.png
+  artifactKey: Guid(899398117f3fb9e4dbb77719d438c41c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modern tiles_Free/Old/Tileset_48x48_3.png using Guid(899398117f3fb9e4dbb77719d438c41c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd3863190ef504e9ee5fb7ffeaa9fd8ca') in 0.0329827 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Modern tiles_Free/Old/Tileset_32x32_16.png
+  artifactKey: Guid(d0011b3e3fd68054aa0a9a93787bb83b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modern tiles_Free/Old/Tileset_32x32_16.png using Guid(d0011b3e3fd68054aa0a9a93787bb83b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'edc532f901c8e5e193947e44fa2e4405') in 0.0348024 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Modern tiles_Free/Old/Tileset_48x48_1.png
+  artifactKey: Guid(1d4dd9028cb5de84cbdffaeae20a817d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modern tiles_Free/Old/Tileset_48x48_1.png using Guid(1d4dd9028cb5de84cbdffaeae20a817d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '63f956987044a2922fc9e200e570fc29') in 0.0329638 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/Modern tiles_Free/Old/Tileset_48x48_9.png
+  artifactKey: Guid(abcd189d64af2794ca84b75ec2a02117) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modern tiles_Free/Old/Tileset_48x48_9.png using Guid(abcd189d64af2794ca84b75ec2a02117) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '657d83660adedd467a06366a6930ae21') in 0.0291515 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
