@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class MatchManager : MonoBehaviour
 {
@@ -58,5 +59,7 @@ public class MatchManager : MonoBehaviour
 
         if (isMatch) Debug.Log("EÞLEÞTÝ!");
         else Debug.Log("EÞLEÞMEDÝ!");
+
+        // Eþleþme durumuna göre sahneye geçmek istersen buraya ekleyebilirsin
     }
 }

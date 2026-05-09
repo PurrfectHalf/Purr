@@ -118,6 +118,6 @@ public class Ziyaretci : MonoBehaviour
 
     public void SahneyeGec()
     {
-        SceneManager.LoadScene(yeniSahneAdi);
+        SceneManager.LoadScene("MatchScene");
     }
 }

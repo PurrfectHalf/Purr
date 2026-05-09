@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/purrfect.unity
+    guid: f945f610ae3f98d46ac22a2f3aecc8f6
+  - enabled: 1
+    path: Assets/matchscene/MatchScene.unity
+    guid: 4bf87dd8de0edc64db94c3af054680c1
   m_configObjects: {}
