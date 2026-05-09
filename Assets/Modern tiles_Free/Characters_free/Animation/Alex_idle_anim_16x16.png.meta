@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ff73cd963796f73478a1a28e36db058a
+guid: 71c96fc19cc2d2e44b676bf7fd2fd314
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Adam_run_16x16_0
+      name: Alex_idle_anim_16x16_0
       rect:
         serializedVersion: 2
         x: 0
@@ -112,14 +112,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e47d90c446838c49957ab73ef3cbae3
-      internalID: -2024469439
+      spriteID: 4c1d0ab7a9fca024f920aadfd5aa5599
+      internalID: -1460736344
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Adam_run_16x16_1
+      name: Alex_idle_anim_16x16_1
       rect:
         serializedVersion: 2
         x: 16
@@ -134,14 +134,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b134d44e36b9b3041b6dc188942e82ce
-      internalID: 1612812496
+      spriteID: b7f70c24d4e28a348b686455da4610b0
+      internalID: -46860313
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Adam_run_16x16_2
+      name: Alex_idle_anim_16x16_2
       rect:
         serializedVersion: 2
         x: 32
@@ -156,14 +156,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a626272f8224524698a357a1dfc13f0
-      internalID: 4185335
+      spriteID: 4f005c09a799e4349ba7ce20a21c4eab
+      internalID: -1217518183
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Adam_run_16x16_3
+      name: Alex_idle_anim_16x16_3
       rect:
         serializedVersion: 2
         x: 48
@@ -178,14 +178,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 19b8f78631a44be42a4969f2639f1e37
-      internalID: 984684018
+      spriteID: 2bafe2bb665edea45bc8b6a4175c3e38
+      internalID: -1936132924
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Adam_run_16x16_4
+      name: Alex_idle_anim_16x16_4
       rect:
         serializedVersion: 2
         x: 64
@@ -200,14 +200,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 75117b654891d274abe5db4b2bfa6c54
-      internalID: 714818295
+      spriteID: 6af2319a070db0a41992ca4b0a2c2d4a
+      internalID: -154230773
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Adam_run_16x16_5
+      name: Alex_idle_anim_16x16_5
       rect:
         serializedVersion: 2
         x: 80
@@ -222,14 +222,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3478d20d88344c4a8b3fea28d36048b
-      internalID: 468010852
+      spriteID: 51a4a61809029a34593b5055ddd40c66
+      internalID: 509681893
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Adam_run_16x16_6
+      name: Alex_idle_anim_16x16_6
       rect:
         serializedVersion: 2
         x: 96
@@ -244,14 +244,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5503bd56f7a97854eb277552f3e6a76e
-      internalID: 839884663
+      spriteID: e68d1cbf54627f14f9870e35109a3507
+      internalID: -1641315703
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Adam_run_16x16_7
+      name: Alex_idle_anim_16x16_7
       rect:
         serializedVersion: 2
         x: 112
@@ -266,14 +266,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c1805e0c795a589458412312216a99be
-      internalID: 1706208608
+      spriteID: 9f6f353dfac527c40aab0dbe1a987bc3
+      internalID: 188308123
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Adam_run_16x16_8
+      name: Alex_idle_anim_16x16_8
       rect:
         serializedVersion: 2
         x: 128
@@ -288,14 +288,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3154c10b91d13b04f91636c3f0db4bab
-      internalID: 835240186
+      spriteID: 1ec56faca2973fa498ea0656f1970f2f
+      internalID: 1222547445
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Adam_run_16x16_9
+      name: Alex_idle_anim_16x16_9
       rect:
         serializedVersion: 2
         x: 144
@@ -310,14 +310,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb3a4973d19ba9d47839ccad852efd91
-      internalID: -551723574
+      spriteID: 82e4321f6eea047478661d22aaaa8f1c
+      internalID: 1864362871
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Adam_run_16x16_10
+      name: Alex_idle_anim_16x16_10
       rect:
         serializedVersion: 2
         x: 160
@@ -332,14 +332,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 951085b1a396bbb4289f233a47704560
-      internalID: 38696585
+      spriteID: 213f8abfe066755459c9807f3e386313
+      internalID: 813049198
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Adam_run_16x16_11
+      name: Alex_idle_anim_16x16_11
       rect:
         serializedVersion: 2
         x: 176
@@ -354,14 +354,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f1ddabd21007c14aa3c36056e8d7f25
-      internalID: -859085512
+      spriteID: def9c36dafd472d45859632fc0320bc5
+      internalID: -722647386
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Adam_run_16x16_12
+      name: Alex_idle_anim_16x16_12
       rect:
         serializedVersion: 2
         x: 192
@@ -376,14 +376,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 31c8edc7708b5b94bad23487fcd1e893
-      internalID: -1242478320
+      spriteID: b397e1f5251e1c645b81cc72086b2323
+      internalID: -1730456372
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Adam_run_16x16_13
+      name: Alex_idle_anim_16x16_13
       rect:
         serializedVersion: 2
         x: 208
@@ -398,14 +398,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 095585e61224a9b4480da2de8275309f
-      internalID: -1375673139
+      spriteID: 76260589f9efc2e4b9c58c95fba9373a
+      internalID: -65091012
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Adam_run_16x16_14
+      name: Alex_idle_anim_16x16_14
       rect:
         serializedVersion: 2
         x: 224
@@ -420,14 +420,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dee2c4b6ea339724e9a4945fda5d2495
-      internalID: -391494004
+      spriteID: 328768596aed51b4cafc77cefff26d7e
+      internalID: -1640381390
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Adam_run_16x16_15
+      name: Alex_idle_anim_16x16_15
       rect:
         serializedVersion: 2
         x: 240
@@ -442,14 +442,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b13522d44f3ed1042a7e9ea66d131e24
-      internalID: -229442561
+      spriteID: 6e576d83afaf17c41b12399ab4c6a487
+      internalID: -456817734
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Adam_run_16x16_16
+      name: Alex_idle_anim_16x16_16
       rect:
         serializedVersion: 2
         x: 256
@@ -464,14 +464,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59ef396f4d13c4f468e1dd239a660813
-      internalID: 1932097394
+      spriteID: b07deee9525dcae48a2c537b8c41f932
+      internalID: 191712970
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Adam_run_16x16_17
+      name: Alex_idle_anim_16x16_17
       rect:
         serializedVersion: 2
         x: 272
@@ -486,14 +486,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f4c356b9bf55ab2449dbc51fce72f9b7
-      internalID: 1999540976
+      spriteID: a0b8d5c01f7944e49951eb0c8bac57c9
+      internalID: -1201372210
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Adam_run_16x16_18
+      name: Alex_idle_anim_16x16_18
       rect:
         serializedVersion: 2
         x: 288
@@ -508,14 +508,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a78a6fe64f4693b4691315fcef76ecc3
-      internalID: 927461190
+      spriteID: 0afb32a5326bbc6419d53f77f175226d
+      internalID: -1113807711
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Adam_run_16x16_19
+      name: Alex_idle_anim_16x16_19
       rect:
         serializedVersion: 2
         x: 304
@@ -530,14 +530,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ef116a42c2aae174f9e605a6d82a92d9
-      internalID: 52672308
+      spriteID: 10aa271f5894c5a40a7f1651a61e7f75
+      internalID: -972678590
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Adam_run_16x16_20
+      name: Alex_idle_anim_16x16_20
       rect:
         serializedVersion: 2
         x: 320
@@ -552,14 +552,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 50621888b1af79d4cbc5d3c23e4deca7
-      internalID: -913893835
+      spriteID: 08f5501d4529d474692af06d7fb2a777
+      internalID: -642589731
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Adam_run_16x16_21
+      name: Alex_idle_anim_16x16_21
       rect:
         serializedVersion: 2
         x: 336
@@ -574,14 +574,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 91c8d96510c69414eb4afde187b1d238
-      internalID: 820413626
+      spriteID: 53f37c2716a57834bbf3896abc33492a
+      internalID: -482735388
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Adam_run_16x16_22
+      name: Alex_idle_anim_16x16_22
       rect:
         serializedVersion: 2
         x: 352
@@ -596,14 +596,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ef9790f196275f94aaaf9a14e218be71
-      internalID: 129136891
+      spriteID: 2246061ea0de86b41a059f63965e41c5
+      internalID: -1574645772
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Adam_run_16x16_23
+      name: Alex_idle_anim_16x16_23
       rect:
         serializedVersion: 2
         x: 368
@@ -618,8 +618,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59126372b3e0db34ab4c733b4b0cf783
-      internalID: 2047612428
+      spriteID: 3a7729e8bf57eff47886306b479efce7
+      internalID: 781661179
       vertices: []
       indices: 
       edges: []
@@ -628,7 +628,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: cd38b0c60632c714cb2e5bdfa586e617
+    spriteID: 2529aa14f222fae4f983ad405421f5b7
     internalID: 0
     vertices: []
     indices: 
@@ -640,30 +640,30 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Adam_run_16x16_0: -2024469439
-      Adam_run_16x16_1: 1612812496
-      Adam_run_16x16_10: 38696585
-      Adam_run_16x16_11: -859085512
-      Adam_run_16x16_12: -1242478320
-      Adam_run_16x16_13: -1375673139
-      Adam_run_16x16_14: -391494004
-      Adam_run_16x16_15: -229442561
-      Adam_run_16x16_16: 1932097394
-      Adam_run_16x16_17: 1999540976
-      Adam_run_16x16_18: 927461190
-      Adam_run_16x16_19: 52672308
-      Adam_run_16x16_2: 4185335
-      Adam_run_16x16_20: -913893835
-      Adam_run_16x16_21: 820413626
-      Adam_run_16x16_22: 129136891
-      Adam_run_16x16_23: 2047612428
-      Adam_run_16x16_3: 984684018
-      Adam_run_16x16_4: 714818295
-      Adam_run_16x16_5: 468010852
-      Adam_run_16x16_6: 839884663
-      Adam_run_16x16_7: 1706208608
-      Adam_run_16x16_8: 835240186
-      Adam_run_16x16_9: -551723574
+      Alex_idle_anim_16x16_0: -1460736344
+      Alex_idle_anim_16x16_1: -46860313
+      Alex_idle_anim_16x16_10: 813049198
+      Alex_idle_anim_16x16_11: -722647386
+      Alex_idle_anim_16x16_12: -1730456372
+      Alex_idle_anim_16x16_13: -65091012
+      Alex_idle_anim_16x16_14: -1640381390
+      Alex_idle_anim_16x16_15: -456817734
+      Alex_idle_anim_16x16_16: 191712970
+      Alex_idle_anim_16x16_17: -1201372210
+      Alex_idle_anim_16x16_18: -1113807711
+      Alex_idle_anim_16x16_19: -972678590
+      Alex_idle_anim_16x16_2: -1217518183
+      Alex_idle_anim_16x16_20: -642589731
+      Alex_idle_anim_16x16_21: -482735388
+      Alex_idle_anim_16x16_22: -1574645772
+      Alex_idle_anim_16x16_23: 781661179
+      Alex_idle_anim_16x16_3: -1936132924
+      Alex_idle_anim_16x16_4: -154230773
+      Alex_idle_anim_16x16_5: 509681893
+      Alex_idle_anim_16x16_6: -1641315703
+      Alex_idle_anim_16x16_7: 188308123
+      Alex_idle_anim_16x16_8: 1222547445
+      Alex_idle_anim_16x16_9: 1864362871
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
