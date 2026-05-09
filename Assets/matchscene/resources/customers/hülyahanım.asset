@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 464515bc2d61e114aa3b61fdaa35a3d0, type: 3}
+  m_Name: "h\xFClyahan\u0131m"
+  m_EditorClassIdentifier: Assembly-CSharp::CustomerData
+  fullCardSprite: {fileID: 21300000, guid: 9c8abbbc1b591bb48b31207156106546, type: 3}
+  preferredTrait1: "A\u011F\u0131rba\u015Fl\u0131 "
+  preferredTrait2: Uyumlu
+  customerName: "H\xFClya Han\u0131m"
