@@ -223,6 +223,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scene
       objectReference: {fileID: 0}
+    - target: {fileID: 3013177658853266353, guid: d3fa89c95479a374ab8d5439b5090359, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6850389126710717465, guid: d3fa89c95479a374ab8d5439b5090359, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7735870787784770564, guid: d3fa89c95479a374ab8d5439b5090359, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.78797
