@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d24ed44e47a31dd4dbeed1c7687db7fb, type: 3}
+  m_Name: sarman
+  m_EditorClassIdentifier: Assembly-CSharp::CatData
+  catName: Sarman
+  catThumbnail: {fileID: 21300000, guid: 84933a64031cfdf4aa4c815f9ccd50db, type: 3}
+  trait1: "Keyif\xE7i"
+  trait2: Sevecen
+  fullCatCardSprite: {fileID: 21300000, guid: 84933a64031cfdf4aa4c815f9ccd50db, type: 3}
