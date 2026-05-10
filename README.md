@@ -28,7 +28,7 @@ Puan Sistemi: Negatif değerlere düşmemesi gereken, oyuncunun prestijini temsi
 📂 Sahne Yapısı (Scene Hierarchy)
 Proje dosyasındaki temel sahneler şunlardır:
 
-: Oyunun giriş ve karşılama ekranı.
+GirisSahnesi: Oyunun giriş ve karşılama ekranı.
 
 purrfect: Müşterilerin kabul edildiği ana barınak alanı.
 
