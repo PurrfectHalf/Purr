@@ -1,16 +1,19 @@
-using UnityEngine;            // MonoBehaviour ve Header için
-using UnityEngine.UI;         // Image ve Text bileþenleri için
-using System.Collections.Generic; // List<> yapýsý için
+using UnityEngine;
+using UnityEngine.UI;
 
 public class CatUI : MonoBehaviour
 {
-    public Image catImageDisplay; // Hazýr kartýn görüneceði Image bileþeni
+    [Header("Görsel Elemanlar")]
+    public Image catImageDisplay;
+
+    // MatchManager artýk kedileri kendi içinde yönettiði için 
+    // burada manager referansýna veya UpdateActiveCat çaðrýsýna gerek yok.
 
     public void DisplayCat(CatData data)
     {
         if (data == null) return;
 
-        // Kedinin tüm bilgilerinin üzerinde olduðu görseli buraya basýyoruz
+        // Sadece görseli güncelliyoruz
         catImageDisplay.sprite = data.fullCatCardSprite;
     }
 }

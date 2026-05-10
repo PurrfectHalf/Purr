@@ -1,93 +1,107 @@
 using UnityEngine;
-using UnityEngine.UI;
-using System.Collections.Generic;
-using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.SceneManagement;
+using System.Collections;
+using System.Collections.Generic;
 
 public class MatchManager : MonoBehaviour
 {
-    public CustomerData currentCustomer;
+    [Header("UI Elemanlarý")]
+    public TextMeshProUGUI feedbackText;
+    public TextMeshProUGUI reputationText;
+
+    [Header("Ün Puaný Ayarlarý")]
+    public int currentReputation = 10;
+    private const int wrongMatchPenalty = 10;
+
+    [Header("Veri Listeleri")]
     public List<CatData> allCats;
-    public CustomerUI customerUI;
-    public CatUI catUI;
+    public CustomerData currentCustomer;
 
-    [Header("Arkaplan Puan Ayarlarý")]
-    public TextMeshProUGUI mesajYazisi; // "Yanlýþ Eþleþtirme" uyarýsý için
-    public int unPuani = 10;             // Ün puaný 10 ile baþlýyor
-
-    private int catIndex = 0;
-    private bool isGameOver = false;
+    private int currentCatIndex = 0;
+    private CatData activeCat;
+    private CatUI catUI;
 
     void Start()
     {
-        if (currentCustomer != null) customerUI.DisplayCustomer(currentCustomer);
-        UpdateCatDisplay();
+        catUI = Object.FindFirstObjectByType<CatUI>();
+        UpdateReputationUI();
+        if (feedbackText != null) feedbackText.text = "";
 
-        if (mesajYazisi != null) mesajYazisi.text = "";
-    }
-
-    // Ok butonlarý için fonksiyonlar
-    public void NextCat() { if (!isGameOver && catIndex < allCats.Count - 1) { catIndex++; UpdateCatDisplay(); } }
-    public void PreviousCat() { if (!isGameOver && catIndex > 0) { catIndex--; UpdateCatDisplay(); } }
-
-    void UpdateCatDisplay()
-    {
-        if (catUI != null && allCats.Count > 0) catUI.DisplayCat(allCats[catIndex]);
-    }
-
-    public void ConfirmMatch()
-    {
-        if (isGameOver) return; // Oyun bittiyse týklamayý engelle
-        CheckMatch(allCats[catIndex]);
-    }
-
-    void CheckMatch(CatData cat)
-    {
-        // Eþleþme mantýðý kontrolü
-        bool isMatch = (cat.trait1 == currentCustomer.preferredTrait1 ||
-                        cat.trait1 == currentCustomer.preferredTrait2 ||
-                        cat.trait2 == currentCustomer.preferredTrait1 ||
-                        cat.trait2 == currentCustomer.preferredTrait2);
-
-        if (isMatch)
+        if (allCats != null && allCats.Count > 0)
         {
-            ShowMessage("Doðru! Mini oyuna geçiliyor...");
-            // Buraya arkadaþýnýn mini oyun sahne geçiþi eklenecek
+            ShowCat(0);
+        }
+    }
+
+    public void NextCat() { currentCatIndex = (currentCatIndex + 1) % allCats.Count; ShowCat(currentCatIndex); }
+    public void PreviousCat() { currentCatIndex = (currentCatIndex - 1 + allCats.Count) % allCats.Count; ShowCat(currentCatIndex); }
+
+    private void ShowCat(int index)
+    {
+        activeCat = allCats[index];
+        if (catUI != null) catUI.DisplayCat(activeCat);
+    }
+
+    public void OnConfirmMatchButtonClicked()
+    {
+        if (activeCat == null || currentCustomer == null) return;
+
+        // Birebir eþleþme için Trim() (boþluk temizleme) ve ToLower() (küçük harf yapma) kullanýyoruz
+        string c1 = currentCustomer.preferredTrait1.Trim().ToLower();
+        string c2 = currentCustomer.preferredTrait2.Trim().ToLower();
+        string k1 = activeCat.trait1.Trim().ToLower();
+        string k2 = activeCat.trait2.Trim().ToLower();
+
+        bool trait1Matched = (c1 == k1 || c1 == k2);
+        bool trait2Matched = (c2 == k1 || c2 == k2);
+
+        if (trait1Matched || trait2Matched)
+        {
+            MatchSuccess();
         }
         else
         {
-            HandleWrongMatch();
+            MatchFail();
         }
     }
 
-    void HandleWrongMatch()
+    private void MatchSuccess()
     {
-        unPuani -= 10;
-
-        if (unPuani < 0)
-        {
-            isGameOver = true;
-            ShowMessage("Ün Tükendi! Oyun Bitti.");
-            Invoke("RestartGame", 3.0f); // Oyun bittiðinde yazý 3 saniye kalsýn sonra resetlesin
-        }
-        else
-        {
-            ShowMessage("Yanlýþ Eþleþtirme! Tekrar Dene."); // Normal hata 2 saniye görünür
-        }
+        StopAllCoroutines(); // Eski mesajlarý temizle
+        feedbackText.text = "Doðru Eþleþme!";
+        feedbackText.color = Color.green;
+        PlayerPrefs.SetInt("SavedReputation", currentReputation);
+        Invoke("LoadMinigame", 1.0f);
     }
 
-    void ShowMessage(string mesaj)
+    private void MatchFail()
     {
-        if (mesajYazisi != null)
-        {
-            mesajYazisi.text = mesaj;
-            CancelInvoke("ClearMessage"); // Eðer oyuncu çok hýzlý basarsa önceki sayacý iptal et
-            Invoke("ClearMessage", 2.0f); // 2 saniye sonra sil
-        }
+        currentReputation -= wrongMatchPenalty;
+        UpdateReputationUI();
+
+        // Yanlýþ mesajýný gösterip silecek olan Coroutine'i baþlatýyoruz
+        StopAllCoroutines();
+        StartCoroutine(ShowFeedbackTemporarily("Yanlýþ kedi! (Ün -10)", Color.red, 2f));
     }
 
-    void ClearMessage()
+    // Yazýyý gösterip belirli bir süre sonra silen fonksiyon
+    IEnumerator ShowFeedbackTemporarily(string message, Color color, float delay)
     {
-        if (mesajYazisi != null) mesajYazisi.text = "";
+        feedbackText.text = message;
+        feedbackText.color = color;
+        yield return new WaitForSeconds(delay);
+        feedbackText.text = "";
+    }
+
+    private void UpdateReputationUI()
+    {
+        if (reputationText != null)
+            reputationText.text = "Ün: " + currentReputation;
+    }
+
+    void LoadMinigame()
+    {
+        SceneManager.LoadScene("MiniGame_FlappyNot");
     }
 }

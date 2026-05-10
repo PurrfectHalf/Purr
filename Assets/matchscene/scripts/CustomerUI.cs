@@ -3,14 +3,26 @@ using UnityEngine.UI;
 
 public class CustomerUI : MonoBehaviour
 {
-    // Sahnendeki o tek hazýr kart Image objesi
-    public Image fullCardImage;
+    [Header("UI Elemanlarý")]
+    public Image fullCardImage; // Sahnendeki o tek hazýr kart Image objesi
+
+    [Header("Veri Ayarlarý")]
+    public CustomerData defaultCustomer; // Inspector'dan Aslý'nýn verisini buraya sürükle
+
+    private void Start()
+    {
+        // Oyun baþladýðýnda eðer bir müþteri verisi atanmýþsa onu göster
+        if (defaultCustomer != null)
+        {
+            DisplayCustomer(defaultCustomer);
+        }
+    }
 
     public void DisplayCustomer(CustomerData data)
     {
         if (data == null) return;
 
-        // Sadece görseli deðiþtiriyoruz, çünkü her þey üstünde yazýyor!
+        // Kartýn görselini deðiþtiriyoruz
         fullCardImage.sprite = data.fullCardSprite;
     }
 }
