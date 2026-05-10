@@ -47,6 +47,7 @@ Assets/purrfect.unity dosyasını açarak Play butonuna basın.
 
 👥 Geliştirici Ekibi
 İrem Büşra Sürüm
+
 Unvan: Takım Lideri & Çok Yönlü Geliştirici (Lead & Multidisciplinary Developer)
 
 Yazılım: Oyun içi sistemlerin kodlanması,oyun mimarisi ve sahne yönetimi.
@@ -56,6 +57,7 @@ Tasarım: Piksel art karakter çizimleri ve çevre dizaynı.
 Yönetim: Proje planlama ve ekip koordinasyonu.
 
 Kayra Cesur
+
 Unvan: Çok Yönlü Geliştirici (Multidisciplinary Developer)
 
 Yazılım: Temel mekaniklerin kodlanması ve mekanik geliştirme.
@@ -65,6 +67,7 @@ Görsel: Piksel art varlıkların oluşturulması ve sahne tasarımı.
 Dizayn: Oyun dengesi ve bölüm tasarımı.
 
 Ümmü Habibe Yüce
+
 Unvan: Çok Yönlü Geliştirici (Multidisciplinary Developer)
 
 Yazılım: Kodlama ve sistem entegrasyonu.
@@ -93,11 +96,6 @@ https://poppyworks.itch.io/silver?download
 UI/Arayüz Elemanları ve Ekstralar: 
 https://toffeecraft.itch.io/cat-user-interface?download
 https://pooklea.itch.io/emote-speech-bubble-32p
-
-🎵 Ses ve Müzik (Audio)
-Arka Plan Müziği: 
-https://purrplecat.itch.io/up-all-night
-
 
 ✒️ Yazı Tipleri (Fonts)
 Oyun İçi Font: https://poppyworks.itch.io/silver?download
