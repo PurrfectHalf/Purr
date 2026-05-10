@@ -2206,7 +2206,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7735870787784770564}
   m_Layer: 0
-  m_Name: Scene
+  m_Name: BarinakSahnesi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
