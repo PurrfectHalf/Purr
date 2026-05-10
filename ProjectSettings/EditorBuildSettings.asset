@@ -18,6 +18,6 @@ EditorBuildSettings:
     path: Assets/MiniGame_FlappyNot.unity
     guid: 6b965023c1725f84e9a14b47c17a7481
   - enabled: 0
-    path: Assets/minigame.unity
+    path: Assets/MiniGame_Louse.unity
     guid: 3167138eab2b9554db19b1b84ab89e68
   m_configObjects: {}
