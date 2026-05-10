@@ -4,25 +4,19 @@ using UnityEngine.UI;
 public class CustomerUI : MonoBehaviour
 {
     [Header("UI Elemanlarý")]
-    public Image fullCardImage; // Sahnendeki o tek hazýr kart Image objesi
+    public Image fullCardImage; // Inspector'dan MusteriPaneli (Image) baðlý olmalý
 
-    [Header("Veri Ayarlarý")]
-    public CustomerData defaultCustomer; // Inspector'dan Aslý'nýn verisini buraya sürükle
-
-    private void Start()
-    {
-        // Oyun baþladýðýnda eðer bir müþteri verisi atanmýþsa onu göster
-        if (defaultCustomer != null)
-        {
-            DisplayCustomer(defaultCustomer);
-        }
-    }
+    // Start fonksiyonunu ve defaultCustomer deðiþkenini sildik!
+    // Artýk patron MatchManager.
 
     public void DisplayCustomer(CustomerData data)
     {
         if (data == null) return;
 
-        // Kartýn görselini deðiþtiriyoruz
-        fullCardImage.sprite = data.fullCardSprite;
+        // Kartýn görselini MatchManager'dan gelen veriye göre günceller
+        if (fullCardImage != null)
+        {
+            fullCardImage.sprite = data.fullCardSprite;
+        }
     }
 }
