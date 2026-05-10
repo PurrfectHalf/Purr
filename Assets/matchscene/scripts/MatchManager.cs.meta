@@ -1,2 +1,15 @@
 fileFormatVersion: 2
 guid: 27c211ca860697342b65f6c37ad20e3f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - currentCustomer: {fileID: 11400000, guid: 6f6ee0c2f4301594c8a70811ec2feff7, type: 2}
+  - customerUI: {instanceID: 0}
+  - catUI: {instanceID: 0}
+  - mesajYazisi: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
