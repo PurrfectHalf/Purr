@@ -100,4 +100,4 @@ https://purrplecat.itch.io/up-all-night
 
 
 ✒️ Yazı Tipleri (Fonts)
-Oyun İçi Font: 
+Oyun İçi Font: https://poppyworks.itch.io/silver?download
