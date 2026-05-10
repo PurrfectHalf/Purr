@@ -9,6 +9,7 @@ public class MatchManager : MonoBehaviour
     [Header("UI Elemanlarý")]
     public TextMeshProUGUI feedbackText;
     public TextMeshProUGUI reputationText;
+    public CustomerUI customerUI;
 
     [Header("Ün Puaný Ayarlarý")]
     public int currentReputation = 10;
@@ -16,40 +17,52 @@ public class MatchManager : MonoBehaviour
 
     [Header("Veri Listeleri")]
     public List<CatData> allCats;
-    public CustomerData currentCustomer;
+    public List<CustomerData> allCustomers;
 
     private int currentCatIndex = 0;
+    private int currentCustomerIndex = 0;
     private CatData activeCat;
     private CatUI catUI;
 
     void Start()
     {
         catUI = Object.FindFirstObjectByType<CatUI>();
-        UpdateReputationUI();
-        if (feedbackText != null) feedbackText.text = "";
 
-        if (allCats != null && allCats.Count > 0)
+        // Hafýzadaki müþteri sýrasýný ve puaný al
+        currentCustomerIndex = PlayerPrefs.GetInt("CurrentCustomerIndex", 0);
+        currentReputation = PlayerPrefs.GetInt("SavedReputation", 10);
+
+        UpdateReputationUI();
+
+        // Baþlangýç kedi ve müþterisini yükle
+        if (allCats.Count > 0) ShowCat(0);
+
+        // Liste taþmasý kontrolü
+        if (currentCustomerIndex >= allCustomers.Count)
         {
-            ShowCat(0);
+            currentCustomerIndex = 0;
+            PlayerPrefs.SetInt("CurrentCustomerIndex", 0);
         }
+
+        ShowCustomer(currentCustomerIndex);
     }
 
-    public void NextCat() { currentCatIndex = (currentCatIndex + 1) % allCats.Count; ShowCat(currentCatIndex); }
-    public void PreviousCat() { currentCatIndex = (currentCatIndex - 1 + allCats.Count) % allCats.Count; ShowCat(currentCatIndex); }
-
-    private void ShowCat(int index)
+    private void ShowCustomer(int index)
     {
-        activeCat = allCats[index];
-        if (catUI != null) catUI.DisplayCat(activeCat);
+        if (allCustomers.Count > 0 && index < allCustomers.Count)
+        {
+            customerUI.DisplayCustomer(allCustomers[index]);
+        }
     }
 
     public void OnConfirmMatchButtonClicked()
     {
-        if (activeCat == null || currentCustomer == null) return;
+        if (activeCat == null || allCustomers.Count == 0) return;
 
-        // Birebir eþleþme için Trim() (boþluk temizleme) ve ToLower() (küçük harf yapma) kullanýyoruz
-        string c1 = currentCustomer.preferredTrait1.Trim().ToLower();
-        string c2 = currentCustomer.preferredTrait2.Trim().ToLower();
+        CustomerData customer = allCustomers[currentCustomerIndex];
+
+        string c1 = customer.preferredTrait1.Trim().ToLower();
+        string c2 = customer.preferredTrait2.Trim().ToLower();
         string k1 = activeCat.trait1.Trim().ToLower();
         string k2 = activeCat.trait2.Trim().ToLower();
 
@@ -62,36 +75,53 @@ public class MatchManager : MonoBehaviour
         }
         else
         {
-            MatchFail();
+            MatchFail(); // Hataya sebep olan fonksiyon burada çaðrýlýyor
         }
     }
 
     private void MatchSuccess()
     {
-        StopAllCoroutines(); // Eski mesajlarý temizle
-        feedbackText.text = "Doðru Eþleþme!";
+        StopAllCoroutines();
+        feedbackText.text = "Doðru Eþleþtirme! Mini oyun yükleniyor...";
         feedbackText.color = Color.green;
+
+        currentReputation += 20;
         PlayerPrefs.SetInt("SavedReputation", currentReputation);
-        Invoke("LoadMinigame", 1.0f);
+
+        // Sýradaki müþteri için indeksi bir artýrýp kaydet
+        PlayerPrefs.SetInt("CurrentCustomerIndex", currentCustomerIndex + 1);
+
+        Invoke("LoadMinigame", 1.5f);
     }
 
+    // EKSÝK OLAN FONKSÝYON BURADA:
     private void MatchFail()
     {
         currentReputation -= wrongMatchPenalty;
         UpdateReputationUI();
-
-        // Yanlýþ mesajýný gösterip silecek olan Coroutine'i baþlatýyoruz
         StopAllCoroutines();
         StartCoroutine(ShowFeedbackTemporarily("Yanlýþ kedi! (Ün -10)", Color.red, 2f));
     }
 
-    // Yazýyý gösterip belirli bir süre sonra silen fonksiyon
     IEnumerator ShowFeedbackTemporarily(string message, Color color, float delay)
     {
+        if (feedbackText == null) yield break;
         feedbackText.text = message;
         feedbackText.color = color;
         yield return new WaitForSeconds(delay);
         feedbackText.text = "";
+    }
+
+    public void NextCat() { currentCatIndex = (currentCatIndex + 1) % allCats.Count; ShowCat(currentCatIndex); }
+    public void PreviousCat() { currentCatIndex = (currentCatIndex - 1 + allCats.Count) % allCats.Count; ShowCat(currentCatIndex); }
+
+    private void ShowCat(int index)
+    {
+        if (allCats.Count > 0)
+        {
+            activeCat = allCats[index];
+            if (catUI != null) catUI.DisplayCat(activeCat);
+        }
     }
 
     private void UpdateReputationUI()
