@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.SceneManagement; // Sahne yönetimi için bu þart!
+using UnityEngine.SceneManagement; 
 
 public class MenuManager : MonoBehaviour
 {
