@@ -28,16 +28,15 @@ public class MatchManager : MonoBehaviour
     {
         catUI = Object.FindFirstObjectByType<CatUI>();
 
-        // Hafýzadaki müþteri sýrasýný ve puaný al
+        // Hafýzadaki deðerleri yükle
         currentCustomerIndex = PlayerPrefs.GetInt("CurrentCustomerIndex", 0);
         currentReputation = PlayerPrefs.GetInt("SavedReputation", 10);
 
         UpdateReputationUI();
 
-        // Baþlangýç kedi ve müþterisini yükle
         if (allCats.Count > 0) ShowCat(0);
 
-        // Liste taþmasý kontrolü
+        // Liste sýnýr kontrolü
         if (currentCustomerIndex >= allCustomers.Count)
         {
             currentCustomerIndex = 0;
@@ -47,20 +46,13 @@ public class MatchManager : MonoBehaviour
         ShowCustomer(currentCustomerIndex);
     }
 
-    private void ShowCustomer(int index)
-    {
-        if (allCustomers.Count > 0 && index < allCustomers.Count)
-        {
-            customerUI.DisplayCustomer(allCustomers[index]);
-        }
-    }
-
     public void OnConfirmMatchButtonClicked()
     {
         if (activeCat == null || allCustomers.Count == 0) return;
 
         CustomerData customer = allCustomers[currentCustomerIndex];
 
+        // Eþleþme kontrolü (Küçük harf ve boþluk temizleme ile)
         string c1 = customer.preferredTrait1.Trim().ToLower();
         string c2 = customer.preferredTrait2.Trim().ToLower();
         string k1 = activeCat.trait1.Trim().ToLower();
@@ -75,7 +67,7 @@ public class MatchManager : MonoBehaviour
         }
         else
         {
-            MatchFail(); // Hataya sebep olan fonksiyon burada çaðrýlýyor
+            MatchFail();
         }
     }
 
@@ -87,20 +79,56 @@ public class MatchManager : MonoBehaviour
 
         currentReputation += 20;
         PlayerPrefs.SetInt("SavedReputation", currentReputation);
-
-        // Sýradaki müþteri için indeksi bir artýrýp kaydet
         PlayerPrefs.SetInt("CurrentCustomerIndex", currentCustomerIndex + 1);
+        PlayerPrefs.Save();
 
         Invoke("LoadMinigame", 1.5f);
     }
 
-    // EKSÝK OLAN FONKSÝYON BURADA:
     private void MatchFail()
     {
         currentReputation -= wrongMatchPenalty;
-        UpdateReputationUI();
+        UpdateReputationUI(); // Sahne geçiþ kontrolü burada yapýlýyor
+
         StopAllCoroutines();
         StartCoroutine(ShowFeedbackTemporarily("Yanlýþ kedi! (Ün -10)", Color.red, 2f));
+    }
+
+    private void UpdateReputationUI()
+    {
+        if (reputationText != null)
+            reputationText.text = "Ün: " + currentReputation;
+
+        // Ün puaný negatife düþtüyse direkt ana menüye (GirisSahnesi) dön
+        if (currentReputation < 0)
+        {
+            Debug.Log("Ün bitti! GirisSahnesine dönülüyor...");
+
+            // Oyunu sýfýrla
+            PlayerPrefs.SetInt("SavedReputation", 10);
+            PlayerPrefs.SetInt("CurrentCustomerIndex", 0);
+            PlayerPrefs.Save();
+
+            // DÝKKAT: Build Settings'te 'GirisSahnesi' isminin doðru olduðundan emin ol
+            SceneManager.LoadScene("GirisSahnesi");
+        }
+    }
+
+    private void ShowCustomer(int index)
+    {
+        if (allCustomers.Count > 0 && index < allCustomers.Count)
+        {
+            customerUI.DisplayCustomer(allCustomers[index]);
+        }
+    }
+
+    private void ShowCat(int index)
+    {
+        if (allCats.Count > 0)
+        {
+            activeCat = allCats[index];
+            if (catUI != null) catUI.DisplayCat(activeCat);
+        }
     }
 
     IEnumerator ShowFeedbackTemporarily(string message, Color color, float delay)
@@ -114,24 +142,5 @@ public class MatchManager : MonoBehaviour
 
     public void NextCat() { currentCatIndex = (currentCatIndex + 1) % allCats.Count; ShowCat(currentCatIndex); }
     public void PreviousCat() { currentCatIndex = (currentCatIndex - 1 + allCats.Count) % allCats.Count; ShowCat(currentCatIndex); }
-
-    private void ShowCat(int index)
-    {
-        if (allCats.Count > 0)
-        {
-            activeCat = allCats[index];
-            if (catUI != null) catUI.DisplayCat(activeCat);
-        }
-    }
-
-    private void UpdateReputationUI()
-    {
-        if (reputationText != null)
-            reputationText.text = "Ün: " + currentReputation;
-    }
-
-    void LoadMinigame()
-    {
-        SceneManager.LoadScene("MiniGame_FlappyNot");
-    }
+    void LoadMinigame() { SceneManager.LoadScene("MiniGame_FlappyNot"); }
 }

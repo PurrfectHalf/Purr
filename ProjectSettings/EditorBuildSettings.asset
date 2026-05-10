@@ -18,6 +18,15 @@ EditorBuildSettings:
     path: Assets/MiniGame_FlappyNot.unity
     guid: 6b965023c1725f84e9a14b47c17a7481
   - enabled: 1
-    path: Assets/minigame.unity
+    path: Assets/MiniGame_Louse.unity
     guid: 3167138eab2b9554db19b1b84ab89e68
+  - enabled: 1
+    path: Assets/BitisSahnesi.unity
+    guid: 1edddc3366b4b0c4e92faf4c20414911
+  - enabled: 1
+    path: Assets/GirisSahnesi.unity
+    guid: 4a9920a727ae0344799e57f970943375
+  - enabled: 1
+    path: Assets/GameOverScene.unity
+    guid: beb278539a62f064fa61135fbe714a00
   m_configObjects: {}
