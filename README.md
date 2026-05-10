@@ -82,13 +82,17 @@ Karakterler ve Kediler: Ekibimiz tarafından pixilart sayfası kullanılarak onl
 https://www.pixilart.com/draw?ref=home-page
 
 Barınak ve Sahne Tasarımları: Ekibimiz tarafından projenin temasına uygun olarak tasarlanmıştır:
-https://shubibubi.itch.io/cozy-interior
-https://toffeecraft.itch.io/pet-virtual-mobile-pixel-asset
-https://shubibubi.itch.io/cozy-people
+https://last-tick.itch.io/animated-pixel-kittens-cats-32x32
+https://toffeecraft.itch.io/pixel-cat-animations (https://toffeecraft.itch.io/cat-pixel-mega-pack)
+https://limezu.itch.io/moderninteriors
+
+Font:
+https://poppyworks.itch.io/silver?download
 
 
-UI/Arayüz Elemanları: 
+UI/Arayüz Elemanları ve Ekstralar: 
 https://toffeecraft.itch.io/cat-user-interface?download
+https://pooklea.itch.io/emote-speech-bubble-32p
 
 🎵 Ses ve Müzik (Audio)
 Arka Plan Müziği: 
