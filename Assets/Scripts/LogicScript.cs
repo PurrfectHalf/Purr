@@ -49,8 +49,11 @@ public class LogicScript : MonoBehaviour
             GameCompletedScreen.SetActive(true);
         }
 
-        // KAZANDI: Siradaki musteriyi korumak icin verileri diske kilitliyoruz
-        PlayerPrefs.Save();
+        // KAZANMA: Önce puaný ekle ve diske hemen kaydet
+        int currentRep = PlayerPrefs.GetInt("SavedReputation", 10);
+        currentRep += 10;
+        PlayerPrefs.SetInt("SavedReputation", currentRep);
+        PlayerPrefs.Save(); // Zaman durmadan önce kesin kaydet
 
         Time.timeScale = 0f;
         StartCoroutine(BesSaniyeBekleVeDon());
@@ -58,29 +61,30 @@ public class LogicScript : MonoBehaviour
 
     public void gameOver()
     {
-        if ((GameCompletedScreen != null && GameCompletedScreen.activeSelf) ||
-            (GameOverScreen != null && GameOverScreen.activeSelf)) return;
+        // GÜVENLÝK KONTROLÜ: Eðer zaten kaybetme ekraný açýldýysa ikinci kez bu kod çalýþmasýn
+        if (GameOverScreen != null && GameOverScreen.activeSelf) return;
 
         if (GameOverScreen != null)
         {
             GameOverScreen.SetActive(true);
         }
 
-        // KAYBETTÝ: Un puanini dusuruyoruz
+        // --- PUAN DÜÞMEME SORUNUNUN ÇÖZÜMÜ ---
+        // Zamaný durdurmadan önce puaný düþüyoruz ve hemen diske yazýyoruz.
         int currentRep = PlayerPrefs.GetInt("SavedReputation", 10);
         currentRep -= 10;
         PlayerPrefs.SetInt("SavedReputation", currentRep);
 
-        // Elenirse ayni musteriyi tekrar denesin diye indeksi bir geri aliyoruz
+        // Müþteri indeksini 1 geri alýyoruz ki ayný müþteri tekrar gelsin
         int currentCust = PlayerPrefs.GetInt("CurrentCustomerIndex", 0);
         if (currentCust > 0)
         {
             PlayerPrefs.SetInt("CurrentCustomerIndex", currentCust - 1);
         }
 
-        PlayerPrefs.Save();
+        PlayerPrefs.Save(); // Veriyi diske kilitle
 
-        Time.timeScale = 0f;
+        Time.timeScale = 0f; // Zamaný þimdi dondurabiliriz
         StartCoroutine(BesSaniyeBekleVeDon());
     }
 
@@ -94,8 +98,21 @@ public class LogicScript : MonoBehaviour
     {
         Time.timeScale = 1f;
 
-        // ISTEGIN: Mini oyun bitince direkt Giris Sahnesine yonlendiriyoruz
-        // Build Settings'te isminin "GirisSahnesi" oldugundan emin ol
-        SceneManager.LoadScene("GirisSahnesi");
+        int currentRep = PlayerPrefs.GetInt("SavedReputation", 10);
+
+        if (currentRep < 0)
+        {
+            Debug.Log("Un negatif! Oyun bitti, GirisSahnesine gidiliyor...");
+            PlayerPrefs.SetInt("SavedReputation", 10);
+            PlayerPrefs.SetInt("CurrentCustomerIndex", 0);
+            PlayerPrefs.Save();
+
+            SceneManager.LoadScene("GirisSahnesi");
+        }
+        else
+        {
+            Debug.Log("Un gecerli, BarinakSahnesine donuluyor... Guncel Un: " + currentRep);
+            SceneManager.LoadScene("BarinakSahnesi");
+        }
     }
 }

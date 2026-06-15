@@ -10,6 +10,6 @@ public class MainMenuHandler : MonoBehaviour
         // PlayerPrefs.SetInt("CurrentCustomerIndex", 0);
 
         // Sahne isminin tam olarak "purrfect" olduğundan emin ol
-        SceneManager.LoadScene("GirisSahnesi");
+        SceneManager.LoadScene("BarinakSahnesi");
     }
 }

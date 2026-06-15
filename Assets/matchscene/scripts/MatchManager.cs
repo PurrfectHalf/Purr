@@ -32,6 +32,20 @@ public class MatchManager : MonoBehaviour
         currentCustomerIndex = PlayerPrefs.GetInt("CurrentCustomerIndex", 0);
         currentReputation = PlayerPrefs.GetInt("SavedReputation", 10);
 
+        // --- UN PUANI KONTROLÜ ---
+        // Eger un puani 0'dan kucukse alt kodlar hic tetiklenmeden aninda sutlansin
+        if (currentReputation < 0)
+        {
+            Debug.Log("Un bitti! GirisSahnesine firlatiliyorsunuz...");
+
+            PlayerPrefs.SetInt("SavedReputation", 10);
+            PlayerPrefs.SetInt("CurrentCustomerIndex", 0);
+            PlayerPrefs.Save();
+
+            SceneManager.LoadScene("GirisSahnesi");
+            return;
+        }
+
         UpdateReputationUI();
 
         // Liste sinir kontrolu (Musteriler bittiyse basa sar)
@@ -58,21 +72,17 @@ public class MatchManager : MonoBehaviour
 
         CustomerData customer = allCustomers[currentCustomerIndex];
 
-        // String temizleme ve kucuk harfe cevirme
         string c1 = customer.preferredTrait1 != null ? customer.preferredTrait1.Trim().ToLower() : "";
         string c2 = customer.preferredTrait2 != null ? customer.preferredTrait2.Trim().ToLower() : "";
         string k1 = activeCat.trait1 != null ? activeCat.trait1.Trim().ToLower() : "";
         string k2 = activeCat.trait2 != null ? activeCat.trait2.Trim().ToLower() : "";
 
-        // Eger inspector'da alanlar bos birakildiysa kontrol disi tut
         bool hasC1 = !string.IsNullOrEmpty(c1);
         bool hasC2 = !string.IsNullOrEmpty(c2);
 
         bool trait1Matched = hasC1 && (c1 == k1 || c1 == k2);
         bool trait2Matched = hasC2 && (c2 == k1 || c2 == k2);
 
-        // ESNEK MANTIK: Alanlardan en az biri bile uyusuyorsa eslesme dogrudur.
-        // Eger musteri sadece tek bir sey ariyorsa, o seyin tutmasi yeterlidir.
         if (trait1Matched || trait2Matched)
         {
             MatchSuccess();
@@ -92,23 +102,17 @@ public class MatchManager : MonoBehaviour
             feedbackText.color = Color.green;
         }
 
-        // Un puanini artir ve diske kaydet
-        currentReputation += 20;
-        PlayerPrefs.SetInt("SavedReputation", currentReputation);
-
-        // Mini oyundan donuldugunde siradaki musteri gelsin diye indeksi 1 artiriyoruz
         currentCustomerIndex += 1;
         PlayerPrefs.SetInt("CurrentCustomerIndex", currentCustomerIndex);
         PlayerPrefs.Save();
 
-        // Oyuncu yaziyi okuyabilsin diye 1.5 saniye sonra mini oyunu ac
         Invoke("LoadMinigame", 1.5f);
     }
 
     private void MatchFail()
     {
         currentReputation -= wrongMatchPenalty;
-        UpdateReputationUI(); // Sahne gecis kontrolu burada yapiliyor
+        UpdateReputationUI();
 
         StopAllCoroutines();
         if (gameObject.activeInHierarchy)
@@ -122,15 +126,11 @@ public class MatchManager : MonoBehaviour
         if (reputationText != null)
             reputationText.text = "Un: " + currentReputation;
 
-        // Un puani 0'in altina duserse oyunu tamamen sifirla ve ana menuye at
         if (currentReputation < 0)
         {
-            Debug.Log("Un bitti! GirisSahnesine donuluyor...");
-
             PlayerPrefs.SetInt("SavedReputation", 10);
             PlayerPrefs.SetInt("CurrentCustomerIndex", 0);
             PlayerPrefs.Save();
-
             SceneManager.LoadScene("GirisSahnesi");
         }
     }
