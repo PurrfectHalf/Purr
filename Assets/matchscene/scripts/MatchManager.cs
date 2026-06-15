@@ -28,27 +28,13 @@ public class MatchManager : MonoBehaviour
     {
         catUI = Object.FindFirstObjectByType<CatUI>();
 
-        // Hafizadaki guncel degerleri yukle
+        // Hafýzadaki deðerleri güvenle yükle
         currentCustomerIndex = PlayerPrefs.GetInt("CurrentCustomerIndex", 0);
         currentReputation = PlayerPrefs.GetInt("SavedReputation", 10);
 
-        // --- UN PUANI KONTROLÜ ---
-        // Eger un puani 0'dan kucukse alt kodlar hic tetiklenmeden aninda sutlansin
-        if (currentReputation < 0)
-        {
-            Debug.Log("Un bitti! GirisSahnesine firlatiliyorsunuz...");
-
-            PlayerPrefs.SetInt("SavedReputation", 10);
-            PlayerPrefs.SetInt("CurrentCustomerIndex", 0);
-            PlayerPrefs.Save();
-
-            SceneManager.LoadScene("GirisSahnesi");
-            return;
-        }
-
         UpdateReputationUI();
 
-        // Liste sinir kontrolu (Musteriler bittiyse basa sar)
+        // Liste sýnýr kontrolü
         if (allCustomers.Count == 0 || currentCustomerIndex >= allCustomers.Count)
         {
             currentCustomerIndex = 0;
@@ -56,7 +42,6 @@ public class MatchManager : MonoBehaviour
             PlayerPrefs.Save();
         }
 
-        // Ilk kedi ve guncel musteriyi ekranda goster
         if (allCats.Count > 0)
         {
             currentCatIndex = 0;
@@ -102,6 +87,7 @@ public class MatchManager : MonoBehaviour
             feedbackText.color = Color.green;
         }
 
+        // Sonuç ne olursa olsun sonraki müþteri gelsin diye indeksi þimdiden uçuruyoruz
         currentCustomerIndex += 1;
         PlayerPrefs.SetInt("CurrentCustomerIndex", currentCustomerIndex);
         PlayerPrefs.Save();
@@ -111,6 +97,7 @@ public class MatchManager : MonoBehaviour
 
     private void MatchFail()
     {
+        // Barýnak içinde henüz mini oyuna gitmeden yanlýþ eþleþme yapýlýrsa
         currentReputation -= wrongMatchPenalty;
         UpdateReputationUI();
 
@@ -126,6 +113,7 @@ public class MatchManager : MonoBehaviour
         if (reputationText != null)
             reputationText.text = "Un: " + currentReputation;
 
+        // Güvenlik önlemi olarak barýnak içindeki ani sýfýrlanma kontrolü
         if (currentReputation < 0)
         {
             PlayerPrefs.SetInt("SavedReputation", 10);
