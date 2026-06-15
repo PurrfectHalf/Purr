@@ -34,7 +34,6 @@ public class Ziyaretci : MonoBehaviour
 
     [Header("Yuruyus Ayarlari")]
     public Transform hedefResepsiyon;
-    public string yeniSahneAdi = "EslestirmeEkrani";
 
     private bool ulastiMi = false;
     private Animator anim;
@@ -42,37 +41,48 @@ public class Ziyaretci : MonoBehaviour
 
     void Start()
     {
-        // ÖNEMLÝ: Kodun Animator'ý bulmasý için en garanti yol
         anim = GetComponent<Animator>();
         yurusScripti = GetComponent<ZiyaretciYurume>();
 
-        // Oyun baþý temizlik: Her þeyi kapat
+        // Temizlik
         if (unlemObjesi) unlemObjesi.SetActive(false);
         if (baloncukObjesi) baloncukObjesi.SetActive(false);
         if (matchButonu) matchButonu.SetActive(false);
         if (diyalogText) diyalogText.text = "";
+
+        // OYUN BÝTÝÞ KONTROLÜ:
+        // Eðer oyuncu mini oyunu kazanýp buraya döndüyse ve 7 müþteriyi de geçtiyse oyunu sýfýrlayýp ana menüye atmalýyýz.
+        // MatchManager'daki toplam müþteri sayýsýný elinle kontrol etmek yerine (örn: 7), buraya sýnýr koyuyoruz:
+        int savedCustomerIndex = PlayerPrefs.GetInt("CurrentCustomerIndex", 0);
+
+        // EÐER 7 MÜÞTERÝ DE BÝTTÝYSE (Ýndeks 7'ye ulaþtýysa)
+        if (savedCustomerIndex >= 7)
+        {
+            Debug.Log("Tüm müsteriler sahiplendirildi! Oyun Basariyla Tamamlandi.");
+            // Verileri tamamen sýfýrla ki bir sonraki oynayýþta baþtan baþlasýn
+            PlayerPrefs.SetInt("CurrentCustomerIndex", 0);
+            PlayerPrefs.SetInt("SavedReputation", 10);
+            PlayerPrefs.Save();
+
+            // Oyuncuyu ana giriþ ekranýna gönder
+            SceneManager.LoadScene("GirisSahnesi");
+            return; // Altýndaki yürüme kodlarýný çalýþtýrma
+        }
 
         // Yürüyüþü Baþlat
         if (yurusScripti != null && hedefResepsiyon != null)
         {
             yurusScripti.HedefeGit(hedefResepsiyon.position);
 
-            // Eðer Animator bulunduysa yürüme animasyonunu aç
             if (anim != null)
             {
                 anim.SetBool("isWalking", true);
-                Debug.Log("Animator bulundu, yürüme animasyonu tetiklendi.");
-            }
-            else
-            {
-                Debug.LogError("HATA: 'Adam' üzerinde Animator bileþeni bulunamadi!");
             }
         }
     }
 
     void Update()
     {
-        // Hedefe ulaþýp ulaþmadýðýný kontrol et
         if (!ulastiMi && hedefResepsiyon != null)
         {
             if (Vector3.Distance(transform.position, hedefResepsiyon.position) < 0.2f)
@@ -85,18 +95,12 @@ public class Ziyaretci : MonoBehaviour
     void DurVeUnlemGoster()
     {
         ulastiMi = true;
-
-        // Durunca yürüme animasyonunu kapat (isWalking = false)
         if (anim != null) anim.SetBool("isWalking", false);
-
-        // Kafasýnda ünlemi yak
         if (unlemObjesi) unlemObjesi.SetActive(true);
     }
 
-    // KARAKTERÝN GÖVDESÝNE TIKLANINCA (OnMouseDown çalýþmasý için BoxCollider2D þart)
     private void OnMouseDown()
     {
-        // Sadece hedefe vardýysa ve ünlem yanýyorken týklanabilsin
         if (ulastiMi && unlemObjesi != null && unlemObjesi.activeSelf)
         {
             KonusmayiAc();
@@ -105,19 +109,19 @@ public class Ziyaretci : MonoBehaviour
 
     void KonusmayiAc()
     {
-        unlemObjesi.SetActive(false); // Ünlem gitsin
-        baloncukObjesi.SetActive(true); // Boþ baloncuk image'ý gelsin
-        matchButonu.SetActive(true); // Sahne geçiþ butonu gelsin
+        if (unlemObjesi) unlemObjesi.SetActive(false);
+        if (baloncukObjesi) baloncukObjesi.SetActive(true);
+        if (matchButonu) matchButonu.SetActive(true);
 
-        // Rastgele metin seçimi
         string secilenMetin = diyaloglar[Random.Range(0, diyaloglar.Length)];
-        diyalogText.text = secilenMetin;
-
-        Debug.Log("Konuþma açýldý, metin: " + secilenMetin);
+        if (diyalogText != null) diyalogText.text = secilenMetin;
     }
 
+    // "Match" butonuna basýnca tetiklenecek fonksiyon
     public void SahneyeGec()
     {
+        // Gitmek istediðin eþleþtirme sahnesinin adý tam olarak neyse onu yükle.
+        // MatchManager o sahnede olduðu için hafýzadaki yeni indeksli müþteriyi otomatik getirecek!
         SceneManager.LoadScene("MatchScene");
     }
 }

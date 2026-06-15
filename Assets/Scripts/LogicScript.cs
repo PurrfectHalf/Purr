@@ -5,34 +5,28 @@ using System.Collections;
 
 public class LogicScript : MonoBehaviour
 {
-    [Header("Skor Ayarlarý")]
-    public int kalanKediSayisi = 10; // 10'dan baþlayacak
+    [Header("Skor Ayarlari")]
+    public int kalanKediSayisi = 10;
     public Text scoreText;
 
-    [Header("Ekran Ayarlarý")]
+    [Header("Ekran Ayarlari")]
     public GameObject GameOverScreen;
-    public GameObject GameCompletedScreen; // Senin adlandýrdýðýn isim
+    public GameObject GameCompletedScreen;
 
     void Start()
     {
-        // Baþlangýçta ekrana 10 yazdýr
         if (scoreText != null)
         {
             scoreText.text = kalanKediSayisi.ToString();
         }
-
-        // Zamanýn akýþýný sýfýrla (Önceki oyundan 0 kalmýþ olabilir)
         Time.timeScale = 1f;
     }
 
-    [ContextMenu("Increase Score")]
     public void addScore(int scoreToAdd)
     {
-        // Bir ekran zaten açýksa skor düþmeye devam etmesin
         if ((GameCompletedScreen != null && GameCompletedScreen.activeSelf) ||
             (GameOverScreen != null && GameOverScreen.activeSelf)) return;
 
-        // Skoru azalt
         kalanKediSayisi -= scoreToAdd;
 
         if (scoreText != null)
@@ -40,7 +34,6 @@ public class LogicScript : MonoBehaviour
             scoreText.text = kalanKediSayisi.ToString();
         }
 
-        // KAZANMA ÞARTI: 10 boru geçtiðinde (0 olduðunda)
         if (kalanKediSayisi <= 0)
         {
             kalanKediSayisi = 0;
@@ -51,25 +44,20 @@ public class LogicScript : MonoBehaviour
 
     void KazanmaSureciniBaslat()
     {
-        // GÜVENLÝK: Ekran koda baðlandýysa aç, yoksa konsola hata yaz
         if (GameCompletedScreen != null)
         {
             GameCompletedScreen.SetActive(true);
         }
-        else
-        {
-            Debug.LogError("HATA: GameCompletedScreen objesini Inspector'dan sürüklemeyi unuttun!");
-        }
 
-        Time.timeScale = 0f; // Arka planý dondur
+        // KAZANDI: Siradaki musteriyi korumak icin verileri diske kilitliyoruz
+        PlayerPrefs.Save();
 
-        // 5 saniye bekle ve barýnaða dön
+        Time.timeScale = 0f;
         StartCoroutine(BesSaniyeBekleVeDon());
     }
 
     public void gameOver()
     {
-        // Kazandýysak kaybetme ekraný çýkmasýn
         if ((GameCompletedScreen != null && GameCompletedScreen.activeSelf) ||
             (GameOverScreen != null && GameOverScreen.activeSelf)) return;
 
@@ -78,22 +66,36 @@ public class LogicScript : MonoBehaviour
             GameOverScreen.SetActive(true);
         }
 
-        // Kaybedince de 5 saniye bekle ve barýnaða dön
+        // KAYBETTÝ: Un puanini dusuruyoruz
+        int currentRep = PlayerPrefs.GetInt("SavedReputation", 10);
+        currentRep -= 10;
+        PlayerPrefs.SetInt("SavedReputation", currentRep);
+
+        // Elenirse ayni musteriyi tekrar denesin diye indeksi bir geri aliyoruz
+        int currentCust = PlayerPrefs.GetInt("CurrentCustomerIndex", 0);
+        if (currentCust > 0)
+        {
+            PlayerPrefs.SetInt("CurrentCustomerIndex", currentCust - 1);
+        }
+
+        PlayerPrefs.Save();
+
+        Time.timeScale = 0f;
         StartCoroutine(BesSaniyeBekleVeDon());
     }
 
     IEnumerator BesSaniyeBekleVeDon()
     {
-        // Zaman 0 olsa bile gerçek zamanlý 5 saniye sayar
         yield return new WaitForSecondsRealtime(5f);
         barinagaDon();
     }
 
     public void barinagaDon()
     {
-        Time.timeScale = 1f; // Zamaný mutlaka normale döndür!
+        Time.timeScale = 1f;
 
-        // BarinakSahnesi'nin Build Settings'te ekli olduðundan emin ol!
-        SceneManager.LoadScene("BarinakSahnesi");
+        // ISTEGIN: Mini oyun bitince direkt Giris Sahnesine yonlendiriyoruz
+        // Build Settings'te isminin "GirisSahnesi" oldugundan emin ol
+        SceneManager.LoadScene("GirisSahnesi");
     }
 }
