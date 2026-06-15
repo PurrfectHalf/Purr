@@ -6,12 +6,12 @@ using System.Collections.Generic;
 
 public class MatchManager : MonoBehaviour
 {
-    [Header("UI Elemanlarý")]
+    [Header("UI Elemanlari")]
     public TextMeshProUGUI feedbackText;
     public TextMeshProUGUI reputationText;
     public CustomerUI customerUI;
 
-    [Header("Ün Puaný Ayarlarý")]
+    [Header("Un Puani Ayarlari")]
     public int currentReputation = 10;
     private const int wrongMatchPenalty = 10;
 
@@ -28,7 +28,7 @@ public class MatchManager : MonoBehaviour
     {
         catUI = Object.FindFirstObjectByType<CatUI>();
 
-        // Hafýzadaki deðerleri yükle
+        // Hafizadaki degerleri yukle
         currentCustomerIndex = PlayerPrefs.GetInt("CurrentCustomerIndex", 0);
         currentReputation = PlayerPrefs.GetInt("SavedReputation", 10);
 
@@ -36,11 +36,12 @@ public class MatchManager : MonoBehaviour
 
         if (allCats.Count > 0) ShowCat(0);
 
-        // Liste sýnýr kontrolü
+        // Liste sinir kontrolu
         if (currentCustomerIndex >= allCustomers.Count)
         {
             currentCustomerIndex = 0;
             PlayerPrefs.SetInt("CurrentCustomerIndex", 0);
+            PlayerPrefs.Save();
         }
 
         ShowCustomer(currentCustomerIndex);
@@ -52,16 +53,17 @@ public class MatchManager : MonoBehaviour
 
         CustomerData customer = allCustomers[currentCustomerIndex];
 
-        // Eþleþme kontrolü (Küçük harf ve boþluk temizleme ile)
+        // Eslesme kontrolu (Kucuk harf ve bosluk temizleme ile)
         string c1 = customer.preferredTrait1.Trim().ToLower();
         string c2 = customer.preferredTrait2.Trim().ToLower();
         string k1 = activeCat.trait1.Trim().ToLower();
         string k2 = activeCat.trait2.Trim().ToLower();
 
+        // Iki ozelligin de uymasi icin && (VE) olarak guncellendi
         bool trait1Matched = (c1 == k1 || c1 == k2);
         bool trait2Matched = (c2 == k1 || c2 == k2);
 
-        if (trait1Matched || trait2Matched)
+        if (trait1Matched && trait2Matched)
         {
             MatchSuccess();
         }
@@ -74,12 +76,19 @@ public class MatchManager : MonoBehaviour
     private void MatchSuccess()
     {
         StopAllCoroutines();
-        feedbackText.text = "Doðru Eþleþtirme! Mini oyun yükleniyor...";
-        feedbackText.color = Color.green;
+        if (feedbackText != null)
+        {
+            feedbackText.text = "Dogru Eslestirme! Mini oyun yukleniyor...";
+            feedbackText.color = Color.green;
+        }
 
+        // Un puanini artir ve kaydet
         currentReputation += 20;
         PlayerPrefs.SetInt("SavedReputation", currentReputation);
-        PlayerPrefs.SetInt("CurrentCustomerIndex", currentCustomerIndex + 1);
+
+        // Bir sonraki sahne donusunde siradaki musterinin gelmesi icin indeksi artir
+        currentCustomerIndex += 1;
+        PlayerPrefs.SetInt("CurrentCustomerIndex", currentCustomerIndex);
         PlayerPrefs.Save();
 
         Invoke("LoadMinigame", 1.5f);
@@ -88,28 +97,26 @@ public class MatchManager : MonoBehaviour
     private void MatchFail()
     {
         currentReputation -= wrongMatchPenalty;
-        UpdateReputationUI(); // Sahne geçiþ kontrolü burada yapýlýyor
+        UpdateReputationUI();
 
         StopAllCoroutines();
-        StartCoroutine(ShowFeedbackTemporarily("Yanlýþ kedi! (Ün -10)", Color.red, 2f));
+        StartCoroutine(ShowFeedbackTemporarily("Yanlis kedi! (Un -10)", Color.red, 2f));
     }
 
     private void UpdateReputationUI()
     {
         if (reputationText != null)
-            reputationText.text = "Ün: " + currentReputation;
+            reputationText.text = "Un: " + currentReputation;
 
-        // Ün puaný negatife düþtüyse direkt ana menüye (GirisSahnesi) dön
+        // Un puani negatif olursa oyunu sifirla ve giris sahnesine don
         if (currentReputation < 0)
         {
-            Debug.Log("Ün bitti! GirisSahnesine dönülüyor...");
+            Debug.Log("Un bitti! GirisSahnesine donuluyor...");
 
-            // Oyunu sýfýrla
             PlayerPrefs.SetInt("SavedReputation", 10);
             PlayerPrefs.SetInt("CurrentCustomerIndex", 0);
             PlayerPrefs.Save();
 
-            // DÝKKAT: Build Settings'te 'GirisSahnesi' isminin doðru olduðundan emin ol
             SceneManager.LoadScene("GirisSahnesi");
         }
     }
@@ -140,7 +147,22 @@ public class MatchManager : MonoBehaviour
         feedbackText.text = "";
     }
 
-    public void NextCat() { currentCatIndex = (currentCatIndex + 1) % allCats.Count; ShowCat(currentCatIndex); }
-    public void PreviousCat() { currentCatIndex = (currentCatIndex - 1 + allCats.Count) % allCats.Count; ShowCat(currentCatIndex); }
-    void LoadMinigame() { SceneManager.LoadScene("MiniGame_FlappyNot"); }
+    public void NextCat()
+    {
+        if (allCats.Count == 0) return;
+        currentCatIndex = (currentCatIndex + 1) % allCats.Count;
+        ShowCat(currentCatIndex);
+    }
+
+    public void PreviousCat()
+    {
+        if (allCats.Count == 0) return;
+        currentCatIndex = (currentCatIndex - 1 + allCats.Count) % allCats.Count;
+        ShowCat(currentCatIndex);
+    }
+
+    void LoadMinigame()
+    {
+        SceneManager.LoadScene("MiniGame_FlappyNot");
+    }
 }
