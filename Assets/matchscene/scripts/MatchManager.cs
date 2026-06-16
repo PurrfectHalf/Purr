@@ -1,6 +1,5 @@
 using UnityEngine;
 using TMPro;
-using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -13,7 +12,6 @@ public class MatchManager : MonoBehaviour
 
     [Header("Un Puani Ayarlari")]
     public int currentReputation = 10;
-    private const int wrongMatchPenalty = 10;
 
     [Header("Veri Listeleri")]
     public List<CatData> allCats;
@@ -28,18 +26,33 @@ public class MatchManager : MonoBehaviour
     {
         catUI = Object.FindFirstObjectByType<CatUI>();
 
-        // Hafýzadaki deðerleri güvenle yükle
-        currentCustomerIndex = PlayerPrefs.GetInt("CurrentCustomerIndex", 0);
-        currentReputation = PlayerPrefs.GetInt("SavedReputation", 10);
+        if (allCustomers.Count > 0)
+        {
+            GameStateManager.SetTotalCustomerCount(allCustomers.Count);
+        }
+
+        currentCustomerIndex = GameStateManager.GetCurrentCustomerIndex();
+        currentReputation = GameStateManager.GetReputation();
+
+        if (currentReputation < 0)
+        {
+            GameStateManager.GoToGameOver();
+            return;
+        }
 
         UpdateReputationUI();
 
-        // Liste sýnýr kontrolü
-        if (allCustomers.Count == 0 || currentCustomerIndex >= allCustomers.Count)
+        if (allCustomers.Count == 0)
         {
-            currentCustomerIndex = 0;
-            PlayerPrefs.SetInt("CurrentCustomerIndex", 0);
-            PlayerPrefs.Save();
+            Debug.LogWarning("Musteri listesi bos!");
+            return;
+        }
+
+        if (currentCustomerIndex >= allCustomers.Count)
+        {
+            GameStateManager.SaveFinalScore();
+            GameStateManager.GoToFinishScene();
+            return;
         }
 
         if (allCats.Count > 0)
@@ -53,12 +66,16 @@ public class MatchManager : MonoBehaviour
 
     public void OnConfirmMatchButtonClicked()
     {
-        if (activeCat == null || allCustomers.Count == 0 || currentCustomerIndex >= allCustomers.Count) return;
+        if (activeCat == null || allCustomers.Count == 0 || currentCustomerIndex >= allCustomers.Count)
+        {
+            return;
+        }
 
         CustomerData customer = allCustomers[currentCustomerIndex];
 
         string c1 = customer.preferredTrait1 != null ? customer.preferredTrait1.Trim().ToLower() : "";
         string c2 = customer.preferredTrait2 != null ? customer.preferredTrait2.Trim().ToLower() : "";
+
         string k1 = activeCat.trait1 != null ? activeCat.trait1.Trim().ToLower() : "";
         string k2 = activeCat.trait2 != null ? activeCat.trait2.Trim().ToLower() : "";
 
@@ -81,45 +98,57 @@ public class MatchManager : MonoBehaviour
     private void MatchSuccess()
     {
         StopAllCoroutines();
+
         if (feedbackText != null)
         {
-            feedbackText.text = "Dogru Eslestirme! Gece Devriyesi Basliyor...";
+            feedbackText.text = "Dogru eslestirme! Mini oyun basliyor...";
             feedbackText.color = Color.green;
         }
 
-        // Sonuç ne olursa olsun sonraki müþteri gelsin diye indeksi þimdiden uçuruyoruz
-        currentCustomerIndex += 1;
-        PlayerPrefs.SetInt("CurrentCustomerIndex", currentCustomerIndex);
-        PlayerPrefs.Save();
-
-        Invoke("LoadMinigame", 1.5f);
+        Invoke(nameof(LoadMinigame), 1.5f);
     }
 
     private void MatchFail()
     {
-        // Barýnak içinde henüz mini oyuna gitmeden yanlýþ eþleþme yapýlýrsa
-        currentReputation -= wrongMatchPenalty;
+        bool gameEnded = GameStateManager.AddReputation(-GameStateManager.WrongMatchPenalty);
+
+        currentReputation = GameStateManager.GetReputation();
         UpdateReputationUI();
 
+        if (gameEnded)
+        {
+            return;
+        }
+
         StopAllCoroutines();
+
         if (gameObject.activeInHierarchy)
         {
-            StartCoroutine(ShowFeedbackTemporarily("Yanlis kedi! (Un -10)", Color.red, 2f));
+            StartCoroutine(ShowWrongMatchFeedback());
+        }
+    }
+
+    IEnumerator ShowWrongMatchFeedback()
+    {
+        if (feedbackText != null)
+        {
+            feedbackText.text = "Yanlis kedi! Un -10. Tekrar dene.";
+            feedbackText.color = Color.red;
+        }
+
+        yield return new WaitForSeconds(1.5f);
+
+        if (feedbackText != null)
+        {
+            feedbackText.text = "";
         }
     }
 
     private void UpdateReputationUI()
     {
         if (reputationText != null)
-            reputationText.text = "Un: " + currentReputation;
-
-        // Güvenlik önlemi olarak barýnak içindeki ani sýfýrlanma kontrolü
-        if (currentReputation < 0)
         {
-            PlayerPrefs.SetInt("SavedReputation", 10);
-            PlayerPrefs.SetInt("CurrentCustomerIndex", 0);
-            PlayerPrefs.Save();
-            SceneManager.LoadScene("GirisSahnesi");
+            reputationText.text = "Un: " + currentReputation;
         }
     }
 
@@ -136,35 +165,38 @@ public class MatchManager : MonoBehaviour
         if (allCats.Count > 0 && index < allCats.Count)
         {
             activeCat = allCats[index];
-            if (catUI != null) catUI.DisplayCat(activeCat);
-        }
-    }
 
-    IEnumerator ShowFeedbackTemporarily(string message, Color color, float delay)
-    {
-        if (feedbackText == null) yield break;
-        feedbackText.text = message;
-        feedbackText.color = color;
-        yield return new WaitForSeconds(delay);
-        feedbackText.text = "";
+            if (catUI != null)
+            {
+                catUI.DisplayCat(activeCat);
+            }
+        }
     }
 
     public void NextCat()
     {
-        if (allCats.Count == 0) return;
+        if (allCats.Count == 0)
+        {
+            return;
+        }
+
         currentCatIndex = (currentCatIndex + 1) % allCats.Count;
         ShowCat(currentCatIndex);
     }
 
     public void PreviousCat()
     {
-        if (allCats.Count == 0) return;
+        if (allCats.Count == 0)
+        {
+            return;
+        }
+
         currentCatIndex = (currentCatIndex - 1 + allCats.Count) % allCats.Count;
         ShowCat(currentCatIndex);
     }
 
     void LoadMinigame()
     {
-        SceneManager.LoadScene("MiniGame_FlappyNot");
+        GameStateManager.GoToMiniGame();
     }
 }

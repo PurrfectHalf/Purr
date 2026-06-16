@@ -1,22 +1,25 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using UnityEngine.EventSystems; // BU SATIR EKSÝKTÝ, EKLEDÝK!
+using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class ClickerGame : MonoBehaviour
 {
-    [Header("Görsel Referanslar")]
+    [Header("Gorsel Referanslar")]
     public RectTransform fleaButton;
     public RectTransform hayaletTarak;
     public TextMeshProUGUI statusText;
 
-    [Header("Oyun Ayarlarý")]
+    [Header("Oyun Ayarlari")]
     public float totalGameTime = 15f;
     public int targetScore = 5;
 
     private int currentScore = 0;
     private float timer;
     private bool isGameActive = false;
+    private bool miniGameEnded = false;
 
     void Start()
     {
@@ -26,7 +29,9 @@ public class ClickerGame : MonoBehaviour
     void Update()
     {
         if (hayaletTarak != null)
+        {
             hayaletTarak.position = Input.mousePosition;
+        }
 
         if (isGameActive)
         {
@@ -34,31 +39,47 @@ public class ClickerGame : MonoBehaviour
             UpdateUI();
 
             if (timer <= 0)
-                EndGame(false, "SÜRE BÝTTÝ!");
+            {
+                EndGame(false, "SURE BITTI!");
+            }
         }
     }
 
     public void OnFleaClick()
     {
-        if (!isGameActive) return;
+        if (!isGameActive || miniGameEnded)
+        {
+            return;
+        }
 
         currentScore++;
+
         if (currentScore >= targetScore)
-            EndGame(true, "BAÞARDIN!");
+        {
+            EndGame(true, "BASARDIN!");
+        }
         else
+        {
             MoveFlea();
+        }
     }
 
     public void OnMissClick()
     {
-        if (!isGameActive) return;
+        if (!isGameActive || miniGameEnded)
+        {
+            return;
+        }
 
-        // Eðer fare þu an pirenin üzerindeyse yanma iþlemini iptal et
-        // Bu sayede çift týklama veya çakýþma hatalarýný önleriz
-        if (EventSystem.current.currentSelectedGameObject == fleaButton.gameObject) return;
+        if (EventSystem.current != null &&
+            EventSystem.current.currentSelectedGameObject != null &&
+            fleaButton != null &&
+            EventSystem.current.currentSelectedGameObject == fleaButton.gameObject)
+        {
+            return;
+        }
 
-        Debug.Log("Pireyi kaçýrdýn, oyun bitti!");
-        EndGame(false, "PÝREYÝ KAÇIRDIN!");
+        EndGame(false, "PIREYI KACIRDIN!");
     }
 
     public void ResetGame()
@@ -66,10 +87,19 @@ public class ClickerGame : MonoBehaviour
         currentScore = 0;
         timer = totalGameTime;
         isGameActive = true;
+        miniGameEnded = false;
 
-        fleaButton.gameObject.SetActive(true);
+        if (fleaButton != null)
+        {
+            fleaButton.gameObject.SetActive(true);
+        }
+
         Cursor.visible = false;
-        if (hayaletTarak != null) hayaletTarak.gameObject.SetActive(true);
+
+        if (hayaletTarak != null)
+        {
+            hayaletTarak.gameObject.SetActive(true);
+        }
 
         MoveFlea();
         UpdateUI();
@@ -77,28 +107,99 @@ public class ClickerGame : MonoBehaviour
 
     void MoveFlea()
     {
-        // Senin SMOKÝN çerçevesine göre bu sýnýrlarý ayarlayabilirsin
+        if (fleaButton == null)
+        {
+            return;
+        }
+
         float limitX = 250f;
         float limitY = 400f;
+
         float randomX = Random.Range(-limitX, limitX);
         float randomY = Random.Range(-limitY, limitY);
+
         fleaButton.anchoredPosition = new Vector2(randomX, randomY);
     }
 
     void EndGame(bool success, string message)
     {
+        if (miniGameEnded)
+        {
+            return;
+        }
+
+        miniGameEnded = true;
         isGameActive = false;
-        fleaButton.gameObject.SetActive(false);
+
+        if (fleaButton != null)
+        {
+            fleaButton.gameObject.SetActive(false);
+        }
+
         Cursor.visible = true;
-        if (hayaletTarak != null) hayaletTarak.gameObject.SetActive(false);
+
+        if (hayaletTarak != null)
+        {
+            hayaletTarak.gameObject.SetActive(false);
+        }
 
         if (statusText != null)
-            statusText.text = success ? $"<color=green>{message}</color>" : $"<color=red>{message}</color>";
+        {
+            statusText.text = success
+                ? $"<color=green>{message}</color>"
+                : $"<color=red>{message}</color>";
+        }
+
+        StartCoroutine(FinishMiniGame(success));
+    }
+
+    IEnumerator FinishMiniGame(bool success)
+    {
+        yield return new WaitForSecondsRealtime(1.5f);
+
+        if (success)
+        {
+            bool gameEndedByScore = GameStateManager.AddReputation(GameStateManager.SuccessReward);
+
+            if (gameEndedByScore)
+            {
+                yield break;
+            }
+
+            bool finishedCustomers = GameStateManager.AdvanceCustomerAndCheckFinished(GameStateManager.GetTotalCustomerCount());
+
+            if (finishedCustomers)
+            {
+                yield break;
+            }
+
+            GameStateManager.GoToShelter();
+        }
+        else
+        {
+            bool gameEndedByReputation = GameStateManager.AddReputation(-GameStateManager.MiniGameFailPenalty);
+
+            if (gameEndedByReputation)
+            {
+                yield break;
+            }
+
+            bool finishedCustomers = GameStateManager.AdvanceCustomerAndCheckFinished(GameStateManager.GetTotalCustomerCount());
+
+            if (finishedCustomers)
+            {
+                yield break;
+            }
+
+            GameStateManager.GoToShelter();
+        }
     }
 
     void UpdateUI()
     {
         if (statusText != null)
-            statusText.text = $"Süre: {timer:F1}s | Pireler: {currentScore}/{targetScore}";
+        {
+            statusText.text = $"Sure: {timer:F1}s | Pireler: {currentScore}/{targetScore}";
+        }
     }
 }

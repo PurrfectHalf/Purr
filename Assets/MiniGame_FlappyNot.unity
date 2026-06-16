@@ -324,7 +324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db9c8402d71989b4b9958726bd0c72dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kalanKediSayisi: 10
+  kalanKediSayisi: 3
   scoreText: {fileID: 1784505028}
   GameOverScreen: {fileID: 732086963}
   GameCompletedScreen: {fileID: 330516440}
@@ -1592,14 +1592,14 @@ RectTransform:
   m_GameObject: {fileID: 1784505027}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2007356468}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -661, y: 267}
+  m_AnchoredPosition: {x: 1427.7, y: -48.2}
   m_SizeDelta: {x: 478.9, y: 475.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1861831137

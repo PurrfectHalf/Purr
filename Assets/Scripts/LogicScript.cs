@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class LogicScript : MonoBehaviour
@@ -13,21 +12,38 @@ public class LogicScript : MonoBehaviour
     public GameObject GameOverScreen;
     public GameObject GameCompletedScreen;
 
+    private bool miniGameEnded = false;
+
     void Start()
     {
+        Time.timeScale = 1f;
+        miniGameEnded = false;
+
         if (scoreText != null)
         {
             scoreText.text = kalanKediSayisi.ToString();
         }
-        Time.timeScale = 1f;
     }
 
     public void addScore(int scoreToAdd)
     {
+        if (miniGameEnded)
+        {
+            return;
+        }
+
         if ((GameCompletedScreen != null && GameCompletedScreen.activeSelf) ||
-            (GameOverScreen != null && GameOverScreen.activeSelf)) return;
+            (GameOverScreen != null && GameOverScreen.activeSelf))
+        {
+            return;
+        }
 
         kalanKediSayisi -= scoreToAdd;
+
+        if (kalanKediSayisi < 0)
+        {
+            kalanKediSayisi = 0;
+        }
 
         if (scoreText != null)
         {
@@ -36,76 +52,103 @@ public class LogicScript : MonoBehaviour
 
         if (kalanKediSayisi <= 0)
         {
-            kalanKediSayisi = 0;
-            if (scoreText != null) scoreText.text = "0";
             KazanmaSureciniBaslat();
         }
     }
 
     void KazanmaSureciniBaslat()
     {
+        if (miniGameEnded)
+        {
+            return;
+        }
+
+        miniGameEnded = true;
+
         if (GameCompletedScreen != null)
         {
             GameCompletedScreen.SetActive(true);
         }
 
-        // KAZANDI: Ün puanýna +20 ekle ve diske yaz
-        int currentRep = PlayerPrefs.GetInt("SavedReputation", 10);
-        currentRep += 20;
-        PlayerPrefs.SetInt("SavedReputation", currentRep);
-        PlayerPrefs.Save();
-
         Time.timeScale = 0f;
-        StartCoroutine(BesSaniyeBekleVeDon());
+        StartCoroutine(BasariliMiniGameSonrasi());
     }
 
     public void gameOver()
     {
-        if (GameOverScreen != null && GameOverScreen.activeSelf) return;
+        if (miniGameEnded)
+        {
+            return;
+        }
+
+        miniGameEnded = true;
 
         if (GameOverScreen != null)
         {
             GameOverScreen.SetActive(true);
         }
 
-        // KAYBETTÝ: Ün puanýndan 10 düþür ve diske yaz
-        int currentRep = PlayerPrefs.GetInt("SavedReputation", 10);
-        currentRep -= 10;
-        PlayerPrefs.SetInt("SavedReputation", currentRep);
-        PlayerPrefs.Save();
-
         Time.timeScale = 0f;
-        StartCoroutine(BesSaniyeBekleVeDon());
+        StartCoroutine(BasarisizMiniGameSonrasi());
     }
 
-    IEnumerator BesSaniyeBekleVeDon()
+    IEnumerator BasariliMiniGameSonrasi()
     {
-        yield return new WaitForSecondsRealtime(5f);
-        barinagaDon();
+        yield return new WaitForSecondsRealtime(1.5f);
+
+        Time.timeScale = 1f;
+
+        bool gameEndedByScore = GameStateManager.AddReputation(GameStateManager.SuccessReward);
+
+        if (gameEndedByScore)
+        {
+            yield break;
+        }
+
+        bool finishedCustomers = GameStateManager.AdvanceCustomerAndCheckFinished(GameStateManager.GetTotalCustomerCount());
+
+        if (finishedCustomers)
+        {
+            yield break;
+        }
+
+        GameStateManager.GoToShelter();
+    }
+
+    IEnumerator BasarisizMiniGameSonrasi()
+    {
+        yield return new WaitForSecondsRealtime(1.5f);
+
+        Time.timeScale = 1f;
+
+        bool gameEndedByReputation = GameStateManager.AddReputation(-GameStateManager.MiniGameFailPenalty);
+
+        if (gameEndedByReputation)
+        {
+            yield break;
+        }
+
+        bool finishedCustomers = GameStateManager.AdvanceCustomerAndCheckFinished(GameStateManager.GetTotalCustomerCount());
+
+        if (finishedCustomers)
+        {
+            yield break;
+        }
+
+        GameStateManager.GoToShelter();
     }
 
     public void barinagaDon()
     {
         Time.timeScale = 1f;
 
-        // Karar aný tam olarak burada devreye giriyor:
-        int currentRep = PlayerPrefs.GetInt("SavedReputation", 10);
-
-        if (currentRep < 0)
+        if (GameStateManager.GetReputation() < 0)
         {
-            // EÐER EKSÝYE DÜÞTÜYSE: Her þeyi sýfýrla ve direkt Giriþ Sahnesine git!
-            Debug.Log("Un eksiye dustu! Doðrudan GirisSahnesine gidiliyor...");
-            PlayerPrefs.SetInt("SavedReputation", 10);
-            PlayerPrefs.SetInt("CurrentCustomerIndex", 0);
-            PlayerPrefs.Save();
-
-            SceneManager.LoadScene("GirisSahnesi");
+            GameStateManager.GoToGameOver();
         }
         else
         {
-            // EÐER EKSIYE DÜÞMEDÝYSE: Doðrudan Barýnak Sahnesine dön (Yeni müþteri zaten hazýr)
-            Debug.Log("Un yeterli. BarinakSahnesine donuluyor...");
-            SceneManager.LoadScene("BarinakSahnesi");
+            GameStateManager.GoToShelter();
         }
     }
 }

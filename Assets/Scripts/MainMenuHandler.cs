@@ -1,15 +1,13 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class MainMenuHandler : MonoBehaviour
 {
     public void StartGame()
     {
-        // Oyuna her baþladýðýnda itibarýn 10'dan baþlamasýný istiyorsan burayý aktif et:
-        // PlayerPrefs.SetInt("SavedReputation", 10);
-        // PlayerPrefs.SetInt("CurrentCustomerIndex", 0);
+        Time.timeScale = 1f;
 
-        // Sahne isminin tam olarak "purrfect" olduðundan emin ol
-        SceneManager.LoadScene("BarinakSahnesi");
+        GameStateManager.ResetGame();
+
+        GameStateManager.GoToShelter();
     }
 }
