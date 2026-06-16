@@ -7,24 +7,25 @@ public class Ziyaretci : MonoBehaviour
 {
     [Header("Diyalog Ayarlari")]
     public string[] diyaloglar = {
-        "Selam! Tatli bir kedi ariyorum.",
+
+        "Selam! Tatlý bir kedi arýyorum.",
         "Merhaba! Bir dost edinmek istiyorum.",
-        "Ruh kedimi burada bulacagima eminim!",
-        "Selam! Evime nese katacak bir pati lazim.",
-        "Merhaba! Hayatima biraz tüy ve pati ariyorum.",
-        "Iyi gunler! Kalbimi calacak o kediyi ariyorum.",
+        "Ruh kedimi burada bulacaðýma eminim!",
+        "Selam! Evime neþe katacak bir pati lazým.",
+        "Merhaba! Hayatýma biraz tüy ve pati arýyorum.",
+        "Ýyi günler! Kalbimi çalacak o kediyi arýyorum.",
         "Selam! Minik bir kaplan sahiplenmeye geldim.",
-        "Merhaba! Birlikte uyuyabilecegim bir dost ariyorum.",
-        "Selam! Evimin yeni patronuyla tanismaya geldim.",
-        "Merhaba! En yaramaz kedinizle tanismak istiyorum.",
-        "Selam! Evdeki saksilari devirecek bir suç ortagi ariyorum.",
-        "Merhaba! Bilgisayarimin klavyesine oturacak o özel kediyi ariyorum.",
-        "Iyi gunler! Geceleri evde kosturup hayalet avlayacak bir dost lazim.",
-        "Selam! Koltuklarimi tirmalamasi icin en tatli adayiniza talibim.",
-        "Merhaba! Hayatima biraz tatli bir kaos ve bolca mirlama ariyorum.",
-        "Selam... Sabah 5'te beni miyavlayarak uyandiracak o yüzsüzü ariyorum.",
-        "Merhaba! Bardaklari masadan asagi itecek cesur bir pati lazim."
-    };
+        "Merhaba! Birlikte uyuyabileceðim bir dost arýyorum.",
+        "Selam! Evimin yeni patronuyla tanýþmaya geldim.",
+        "Merhaba! En yaramaz kedinizle tanýþmak istiyorum.",
+        "Selam! Evdeki saksýlarý devirecek bir suç ortaðý arýyorum.",
+        "Merhaba! Bilgisayarýmýn klavyesine oturacak o özel kediyi arýyorum.",
+        "Ýyi günler! Geceleri evde koþturup hayalet avlayacak bir dost lazým.",
+        "Selam! Koltuklarýmý týrmalamasý için en tatlý adayýnýza talibim.",
+        "Merhaba! Hayatýma biraz tatlý bir kaos ve bolca mýrlama arýyorum.",
+        "Selam... Sabah 5'te beni miyavlayarak uyandýracak o yüzsüzü arýyorum.",
+        "Merhaba! Bardaklarý masadan aþaðý itecek cesur bir pati lazým."
+        };
 
     [Header("UI Objeleri (Hierarchy'den Surukle)")]
     public GameObject unlemObjesi;

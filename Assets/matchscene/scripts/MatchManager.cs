@@ -44,7 +44,7 @@ public class MatchManager : MonoBehaviour
 
         if (allCustomers.Count == 0)
         {
-            Debug.LogWarning("Musteri listesi bos!");
+            Debug.LogWarning("Müþteri listesi boþ!");
             return;
         }
 
@@ -101,8 +101,9 @@ public class MatchManager : MonoBehaviour
 
         if (feedbackText != null)
         {
-            feedbackText.text = "Dogru eslestirme! Mini oyun basliyor...";
-            feedbackText.color = Color.green;
+            feedbackText.text = "Doðru eþleþtirme! Mini oyun baþlýyor...";
+            feedbackText.color = new Color(0.35f, 0.65f, 0.40f);
+
         }
 
         Invoke(nameof(LoadMinigame), 1.5f);
@@ -132,7 +133,7 @@ public class MatchManager : MonoBehaviour
     {
         if (feedbackText != null)
         {
-            feedbackText.text = "Yanlis kedi! Un -10. Tekrar dene.";
+            feedbackText.text = "Yanlýþ kedi! Ün -10. Tekrar dene.";
             feedbackText.color = Color.red;
         }
 
@@ -148,7 +149,7 @@ public class MatchManager : MonoBehaviour
     {
         if (reputationText != null)
         {
-            reputationText.text = "Un: " + currentReputation;
+            reputationText.text = "ÜN: " + currentReputation;
         }
     }
 
