@@ -99,11 +99,16 @@ public class MatchManager : MonoBehaviour
     {
         StopAllCoroutines();
 
+        // --- DOÐRU EÞLEÞTÝRME: KEDÝ MÝYAVLAMA SESÝ (Cat_Meow) ---
+        if (AudioManager.instance != null)
+        {
+            AudioManager.instance.PlaySFX(AudioManager.instance.dogruEslesmeSesi);
+        }
+
         if (feedbackText != null)
         {
             feedbackText.text = "Doðru eþleþtirme! Mini oyun baþlýyor...";
             feedbackText.color = new Color(0.35f, 0.65f, 0.40f);
-
         }
 
         Invoke(nameof(LoadMinigame), 1.5f);
@@ -111,6 +116,12 @@ public class MatchManager : MonoBehaviour
 
     private void MatchFail()
     {
+        // --- YANLIÞ EÞLEÞTÝRME: POP PATLAMA SESÝ (slodkabonanza) ---
+        if (AudioManager.instance != null)
+        {
+            AudioManager.instance.PlaySFX(AudioManager.instance.yanlisEslesmeSesi);
+        }
+
         bool gameEnded = GameStateManager.AddReputation(-GameStateManager.WrongMatchPenalty);
 
         currentReputation = GameStateManager.GetReputation();
@@ -181,6 +192,12 @@ public class MatchManager : MonoBehaviour
             return;
         }
 
+        // --- SAÐ OK BUTTONU: ABSTRACT SESÝ (Abstract2) ---
+        if (AudioManager.instance != null)
+        {
+            AudioManager.instance.PlaySFX(AudioManager.instance.okButonuSesi);
+        }
+
         currentCatIndex = (currentCatIndex + 1) % allCats.Count;
         ShowCat(currentCatIndex);
     }
@@ -190,6 +207,12 @@ public class MatchManager : MonoBehaviour
         if (allCats.Count == 0)
         {
             return;
+        }
+
+        // --- SOL OK BUTTONU: ABSTRACT SESÝ (Abstract2) ---
+        if (AudioManager.instance != null)
+        {
+            AudioManager.instance.PlaySFX(AudioManager.instance.okButonuSesi);
         }
 
         currentCatIndex = (currentCatIndex - 1 + allCats.Count) % allCats.Count;

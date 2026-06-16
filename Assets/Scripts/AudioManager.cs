@@ -4,16 +4,23 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
 
-    [Header("Ses Kaynaklari")]
-    public AudioSource bgmSource;
-    public AudioSource sfxSource;
+    [Header("Ses Kaynaklari (Hoparlörler)")]
+    public AudioSource bgmSource;  // Müziði çalan hoparlör
+    public AudioSource sfxSource;  // Efektleri çalan hoparlör
 
-    [Header("Ses Klipleri")]
-    public AudioClip arkaPlanMuzigi;
+    [Header("Merkezi Arka Plan Müziði")]
+    public AudioClip arkaPlanMuzigi; // Cute Bossa Nova buraya gelecek
+
+    [Header("Flappy Bird Mini Oyun Sesleri")]
     public AudioClip ziplamaSesi;
     public AudioClip skorSesi;
     public AudioClip basariSesi;
     public AudioClip yanmaSesi;
+
+    [Header("Eþleþtirme Ekraný Sesleri")]
+    public AudioClip okButonuSesi;
+    public AudioClip dogruEslesmeSesi;
+    public AudioClip yanlisEslesmeSesi;
 
     void Awake()
     {
@@ -48,6 +55,26 @@ public class AudioManager : MonoBehaviour
         if (sfxSource != null && clip != null)
         {
             sfxSource.PlayOneShot(clip);
+        }
+    }
+
+    // --- YENÝ: MÜZÝK KAPATMA / AÇMA FONKSÝYONU ---
+    // Toggle durumuna göre (true/false) müziði susturur
+    public void ToggleBGM(bool isOn)
+    {
+        if (bgmSource != null)
+        {
+            bgmSource.mute = !isOn; // Eðer Toggle açýksa (true), mute kapansýn (false) yani ses gelsin.
+        }
+    }
+
+    // --- YENÝ: SFX KAPATMA / AÇMA FONKSÝYONU ---
+    // Toggle durumuna göre (true/false) efektleri susturur
+    public void ToggleSFX(bool isOn)
+    {
+        if (sfxSource != null)
+        {
+            sfxSource.mute = !isOn;
         }
     }
 }
