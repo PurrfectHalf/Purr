@@ -65,6 +65,12 @@ public class LogicScript : MonoBehaviour
 
         miniGameEnded = true;
 
+        // --- BAÞARI/KAZANMA SESÝ TETÝKLEYÝCÝSÝ ---
+        if (AudioManager.instance != null)
+        {
+            AudioManager.instance.PlaySFX(AudioManager.instance.basariSesi);
+        }
+
         if (GameCompletedScreen != null)
         {
             GameCompletedScreen.SetActive(true);
